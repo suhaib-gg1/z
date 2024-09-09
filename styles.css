@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(126, 7, 7);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+.img{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    position: absolute;
+    top: 10px; /* المسافة من أعلى الصفحة */
+    right: 100px; /* المسافة من اليمين */
+    width: 100px; /* عرض الشعار، يمكنك تعديله حسب الحاجة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+
+}
+#z{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.m{
+    position:relative;
+    top: -35px; /* المسافة من أعلى الصفحة */
+    right: -550px; /* المسافة من اليمين */
+    width: 50px; /* عرض الشعار، يمكنك تعديله حسب الحاجة */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    margin: 0;
+    padding: 0;
+}
