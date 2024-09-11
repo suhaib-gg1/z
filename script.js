@@ -11,6 +11,6 @@ document.getElementById('zakah-form').addEventListener('submit', function(event)
     const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
 
     // عرض النتيجة
-    document.getElementById('result').textContent = `الزكاة المستحقة: ${zakahAmount.toFixed(2)} ريال`;
+    document.getElementById('result').textContent = `الزكاة المستحقة: ${zakahAmount.toFixed(2)>=0} ريال`;
 });
 
