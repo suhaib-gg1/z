@@ -11,3 +11,5 @@ document.getElementById('zakah-form').addEventListener('submit', function(event)
     // عرض النتيجة
     document.getElementById('result').textContent = `الزكاة المستحقة: ${zakahAmount.toFixed(2)} ريال`;
 });
+window.alert("﴿ الله لا إله إلا هو الحي القيوم لا تأخذه سنة ولا نوم له ما في السماوات وما في الأرض من ذا الذي يشفع عنده إلا بإذنه يعلم ما بين أيديهم وما خلفهم ولا يحيطون بشيء من علمه إلا بما شاء وسع كرسيه السماوات والأرض ولا يئوده حفظهما وهو العلي العظيم ﴾ ")
+
