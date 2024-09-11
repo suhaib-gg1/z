@@ -66,7 +66,7 @@ button:hover {
     margin: 0px;
     border: 0px;
     position: absolute;
-    top: 10px; /* المسافة من أعلى الصفحة */
+    top: 0px; /* المسافة من أعلى الصفحة */
     right: 100px; /* المسافة من اليمين */
     width: 100px; /* عرض الشعار، يمكنك تعديله حسب الحاجة */
     height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
@@ -92,6 +92,19 @@ p{
     font-size: 16px ;
     margin: 0;
     padding: 0;
-    border: 5px solid;
-    border-radius: #ff0000; 
+    border: solid;
+    border-color: #ff0000; 
 }
+/*.b{
+    height: 35px;
+    width: 100%;
+    background-color: #333;
+}
+#n{
+    position: absolute;
+    
+    margin: 3px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+}*/
