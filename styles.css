@@ -1,22 +1,68 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0px;
+    margin: 0;
     padding: 0;
-    background-image:url("Designer.jpeg");
+    background-image: url("Designer.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+}
+
+.b {
+    margin-right: 20px; /* مسافة بين قائمة اللغة وقائمة الهمبرغر */
+}
+
+.hamburger {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none; /* إخفاء القائمة افتراضيًا */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* ارتفاع navbar */
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.nav-links.show {
+    display: flex; /* عرض القائمة عند التفعيل */
+}
+
 .container {
     max-width: 600px;
-    margin: 100px auto;
+    margin: 75px auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgb(126, 7, 7);
+    box-shadow: 0 0 20px rgb(163, 7, 7);
     height: 360px;
 }
 
@@ -61,50 +107,18 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
 }
-.img{
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    position: absolute;
-    top: 0px; /* المسافة من أعلى الصفحة */
-    right: 100px; /* المسافة من اليمين */
-    width: 100px; /* عرض الشعار، يمكنك تعديله حسب الحاجة */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
 
-}
-#z{
-    margin: 0;
-    padding: 0;
+.img {
     border: 0;
-}
-.m{
-    position:relative;
-    top: -35px; /* المسافة من أعلى الصفحة */
-    right: -550px; /* المسافة من اليمين */
-    width: 50px; /* عرض الشعار، يمكنك تعديله حسب الحاجة */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-    margin: 0;
     padding: 0;
-}
-p{
-    background-color: yellow;
-    color: #ff0000;
-    font-size: 16px ;
     margin: 0;
-    padding: 0;
-    border: solid;
-    border-color: #ff0000; 
-}
-/*.b{
-    height: 35px;
-    width: 100%;
-    background-color: #333;
-}
-#n{
     position: absolute;
-    
-    margin: 3px;
+    top: 5px;
+    right: 70px;
+    width: 100px;
+}
+
+#z {
+    margin: 0;
     padding: 0;
-    width: 30px;
-    height: 30px;
-}*/
+}
