@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    
+
     // Handle form submission
     document.getElementById('zakah-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -93,16 +93,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    // استرجاع الوضع المخزن
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('toggle-dark-mode').textContent = '🌞';
+    }
+
+    // تفعيل أو تعطيل الوضع الليلي
     document.getElementById('toggle-dark-mode').addEventListener('click', () => {
-        // التبديل بين الوضعين
         document.body.classList.toggle('dark-mode');
         
-        // تغيير الزر ليعكس الوضع الحالي (نهار أو ليل)
-        const button = document.getElementById('toggle-dark-mode');
+        // حفظ الوضع في localStorage
         if (document.body.classList.contains('dark-mode')) {
-            button.textContent = '🌞';  // تغيير رمز الزر إلى الشمس عند تفعيل الوضع الليلي
+            localStorage.setItem('darkMode', 'enabled');
+            document.getElementById('toggle-dark-mode').textContent = '🌞';
         } else {
-            button.textContent = '🌚';  // تغيير رمز الزر إلى القمر عند العودة للوضع النهاري
+            localStorage.setItem('darkMode', 'disabled');
+            document.getElementById('toggle-dark-mode').textContent = '🌚';
         }
     });
-    
+});
+
