@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 60px; /* إضافة حشوة أعلى الصفحة تساوي ارتفاع الـ navbar */
+    background-image: url("Designer.jpeg"); /* وضع الصورة الخلفية */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+    transition: background-color 0.3s, color 0.3s; /* انتقال سلس للألوان */
+}
+
+.navbar {
+    position: fixed;  /* تثبيت الـ navbar في أعلى الصفحة */
+    top: 0;           /* وضعه في أعلى الصفحة */
+    left: 0;          /* محاذاته من الجهة اليسرى */
+    width: 100%;      /* العرض الكامل للـ navbar */
+    display: flex;
+    align-items: center; /* محاذاة العناصر داخل الـ navbar */
+    background-color: #333; /* لون خلفية الـ navbar */
+    padding: 10px 20px; /* حشوة داخلية للـ navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* إضافة تأثير ظل للـ navbar */
+    z-index: 1000;    /* لضمان بقاء الـ navbar فوق باقي العناصر */
+}
+.logo {
+    color: #fff; /* لون النص */
+    font-size: 24px; /* حجم النص */
+    font-weight: bold; /* سمك النص */
+    right: 1000px;
+}
+#lang {
+    appearance: none; /* إزالة التصميم الافتراضي */
+    padding: 10px 40px 10px 15px; /* حشوة داخلية */
+    border: 2px solid #007BFF; /* لون الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    background-color: #ffffff; /* لون الخلفية */
+    color: #333; /* لون النص */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    transition: border-color 0.3s ease; /* تأثير عند تغيير لون الحدود */
+}
+#lang:focus {
+    outline: none; /* إزالة الحدود عند التركيز */
+    border-color: #66afe9; /* لون الحدود عند التركيز */
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* ظل عند التركيز */
+}
+#lang:hover + .select-wrapper::after {
+    transform: translateY(-50%) rotate(180deg); /* دوران السهم عند التمرير */
+}
+
+.b {
+    margin-right: 20px; /* مسافة بين قائمة اللغة وقائمة الهمبرغر */
+    border-radius: 10px;
+    size: 20px;
+}
+.hamburger {
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: absolute;  /* لجعل الهامبرغر في أقصى اليمين */
+        right: 50px;          /* تحديد المسافة من الجهة اليمنى */
+        top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
+        transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    }
+
+
+.nav-links {
+    display: none; /* إخفاء القائمة افتراضيًا */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* ارتفاع navbar */
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+.nav-links.show {
+    display: flex; /* عرض القائمة عند التفعيل */
+}
+.story{
+    max-width: 600px;
+    margin: 100px auto auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgb(163, 7, 7);
+    height: auto;
+}
+.img {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    right: 70px;
+    width: 100px;
+}
+.content {
+    display: none;
+    max-width: 600px;
+    margin: 75px auto;
+    padding: 20px;
+    background: #bdbdbd;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.822);
+    height: auto;
+    transition: background-color 0.3s; /* انتقال سلس */
+border: 1px solid red;}
+
+.arrow {
+    cursor: pointer;
+    font-size: 20px; /* حجم السهم */
+    margin-right: 5px;
+}
+p{
+    font-size: 25px;
+}
+.nom{
+    font-size: 30px;
+    font-weight: 100;
+}
+h6{
+  margin: auto;
+}
+/* إضافة نمط لـ <select> */
+select {
+    padding: 10px; /* إضافة حشوة */
+    border: 1px solid #ccc; /* لون الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    background-color: #f9f9f9; /* لون الخلفية */
+    font-size: 16px; /* حجم الخط */
+    appearance: none; /* إزالة التصميم الافتراضي */
+}
+
+/* إضافة سهم مخصص */
+select:focus {
+    outline: none; /* إزالة الحدود عند التركيز */
+    border-color: #66afe9; /* لون الحدود عند التركيز */
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select-wrapper::after {
+    content: '▼'; /* رمز السهم */
+    position: absolute; /* لتحريكه */
+    top: 50%; /* في المنتصف */
+    right: 10px; /* المسافة من اليمين */
+    transform: translateY(-50%); /* توسيط السهم */
+    pointer-events: none; /* منع التفاعل مع السهم */
+    color: #007BFF; /* لون السهم */
+    font-size: 18px; /* حجم السهم */
+    transition: transform 0.3s; /* تأثير عند التغيير */
+}
+
+
+/* تغيير مظهر زر */
+button {
+    background-color: #4CAF50; /* لون الخلفية */
+    color: white; /* لون النص */
+    padding: 10px 20px; /* حشوة */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+}
+
+button:hover {
+    background-color: #45a049; /* لون الخلفية عند التمرير */
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زكاتي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="z.icon">
+</head>
+<body>
+    <div class="navbar">
+        <div class="b">
+            <div class="select-wrapper">
+                <select id="lang">
+                    <option value="ar">عربي</option>
+                    <option value="en">English</option>
+                    <option value="ur">اردو</option>
+                    <option value="id">Indonesia</option>
+            
+                </select>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- رمز همبرغر -->
+        </div>
+        <ul class="nav-links" id="nav-links" dir="auto">
+            <li><a id="story" href="story-page.html">قصص</a></li>
+            <button id="toggle-dark-mode" title="تبديل الوضع">🌚</button>
+
+        </ul>
+    </div>
+    <div class="img">
+        <img src="snapedit_1730146554309.png" width="120"  alt="Logo">
+    </div>
+    <div class="container">
+        <h1 id="z">حاسبة الزكاة</h1>
+        <form id="zakah-form">
+            <label for="total-wealth" id="total-wealth-label">المال الذي حال عليه الحول (بالريال):</label>
+            <input type="number" id="total-wealth" required min="0">
+            <label for="debt" id="debt-label">الدين (بالريال):</label>
+            <input type="number" id="debt" required min="0">
+            <button type="submit" id="calculate-button">احسب الزكاة</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+
+
+
+    </script>
+</body>
+</html>
