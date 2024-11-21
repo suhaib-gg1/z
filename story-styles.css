@@ -1,6 +1,28 @@
+:root {
+    --background-color: #f4f4f4; /* اللون الافتراضي للخلفية */
+    --text-color: #000000; /* اللون الافتراضي للنصوص */
+    --navbar-background: #cacaca; /* لون خلفية الشريط العلوي */
+    --button-background: #28a745; /* اللون الافتراضي لأزرار الحاسبة */
+    --button-hover: #218838; /* اللون عند التمرير على الزر */
+    --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
+    --result-text-color: #000;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --navbar-background: #333;
+    --button-background: #555;
+    --button-hover: #666;
+    --container-background: #444;
+    --result-text-color: #fff;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    color: var(--text-color);
     margin: 0;
     padding-top: 60px; /* إضافة حشوة أعلى الصفحة تساوي ارتفاع الـ navbar */
     background-image: url("Designer.jpeg"); /* وضع الصورة الخلفية */
@@ -18,7 +40,7 @@ body {
     width: 100%;      /* العرض الكامل للـ navbar */
     display: flex;
     align-items: center; /* محاذاة العناصر داخل الـ navbar */
-    background-color: #333; /* لون خلفية الـ navbar */
+    background-color: var(--navbar-background);
     padding: 10px 20px; /* حشوة داخلية للـ navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* إضافة تأثير ظل للـ navbar */
     z-index: 1000;    /* لضمان بقاء الـ navbar فوق باقي العناصر */
@@ -71,7 +93,7 @@ body {
     position: absolute;
     top: 60px; /* ارتفاع navbar */
     right: 0;
-    background-color: #333;
+    background-color: var(--navbar-background);
     width: 200px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -83,9 +105,15 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     padding: 10px;
     display: block;
+}
+
+.nav-links a:hover{
+    background-color: #00000085;
+    color: #ffffff;
+    border-radius: 5px;
 }
 
 .nav-links.show {
@@ -95,7 +123,7 @@ body {
     max-width: 600px;
     margin: 100px auto auto;
     padding: 20px;
-    background: #fff;
+    background: var(--container-background);
     border-radius: 8px;
     box-shadow: 0 0 20px rgb(163, 7, 7);
     height: auto;
@@ -114,11 +142,11 @@ body {
     max-width: 600px;
     margin: 75px auto;
     padding: 20px;
-    background: #bdbdbd;
+    background: var(--container-background);
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.822);
     height: auto;
-    transition: background-color 0.3s; /* انتقال سلس */
+    transition: background-color 0.1s; /* انتقال سلس */
 border: 1px solid red;}
 
 .arrow {
@@ -170,17 +198,18 @@ select:focus {
 }
 
 
-/* تغيير مظهر زر */
-button {
-    background-color: #4CAF50; /* لون الخلفية */
-    color: white; /* لون النص */
-    padding: 10px 20px; /* حشوة */
-    border: none; /* إزالة الحدود */
-    border-radius: 5px; /* زوايا مدورة */
-    cursor: pointer; /* تغيير المؤشر عند التمرير */
-}
 
-button:hover {
-    background-color: #45a049; /* لون الخلفية عند التمرير */
-}
 
+#toggle-dark-mode{
+    position:relative;
+    border: solid rgba(0, 0, 0, 0.712);
+    border-radius: 7px;
+    appearance: none; /* إزالة التصميم الافتراضي */
+    background-color: var(--button-background);
+    color: #000000;
+    display: inline-block;
+    font-size: 18px;
+
+
+
+}
