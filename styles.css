@@ -1,7 +1,26 @@
+:root {
+    --background-color: #f4f4f4; /* اللون الافتراضي للخلفية */
+    --text-color: #000000; /* اللون الافتراضي للنصوص */
+    --navbar-background: #cacaca; /* لون خلفية الشريط العلوي */
+    --button-background: #28a745; /* اللون الافتراضي لأزرار الحاسبة */
+    --button-hover: #218838; /* اللون عند التمرير على الزر */
+    --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
+    --result-text-color: #000;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --navbar-background: #333;
+    --button-background: #555;
+    --button-hover: #666;
+    --container-background: #444;
+    --result-text-color: #fff;
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    color: var(--text-color);
     margin: 0;
     padding-top: 60px; /* إضافة حشوة أعلى الصفحة تساوي ارتفاع الـ navbar */
     background-image: url("Designer.jpeg"); /* وضع الصورة الخلفية */
@@ -19,11 +38,12 @@ body {
     width: 100%;      /* العرض الكامل للـ navbar */
     display: flex;
     align-items: center; /* محاذاة العناصر داخل الـ navbar */
-    background-color: #cacaca; /* لون خلفية الـ navbar */
+    background-color: var(--navbar-background);
     padding: 10px 20px; /* حشوة داخلية للـ navbar */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* إضافة تأثير ظل للـ navbar */
     z-index: 1000;    /* لضمان بقاء الـ navbar فوق باقي العناصر */
 }
+
 .logo {
     color: #fff; /* لون النص */
     font-size: 24px; /* حجم النص */
@@ -70,7 +90,7 @@ body {
     position: absolute;
     top: 60px; /* ارتفاع navbar */
     right: 0;
-    background-color: #acacac;
+    background-color: var(--navbar-background);
     width: 200px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -82,15 +102,17 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: rgb(36, 36, 36);
+    color: var(--text-color);
     padding: 10px;
     display: block;
     border-radius: 10px;
-    width: 75%;
+    
 }
 .nav-links a:hover{
     background-color: #00000085;
     color: #ffffff;
+    border-radius: 5px;
+
 }
 
 .nav-links.show {
@@ -101,7 +123,7 @@ body {
     max-width: 600px;
     margin: 75px auto;
     padding: 20px;
-    background: #cacaca;
+    background: var(--container-background);
     border-radius: 8px;
     box-shadow: 0 0 20px rgb(163, 7, 7);
     height: 360px;
@@ -113,7 +135,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: var(--text-color);
 }
 
 form {
@@ -124,6 +146,8 @@ form {
 label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: var(--text-color);
+
 }
 
 input {
@@ -137,19 +161,21 @@ input {
 #calculate-button {
     padding: 10px;
     font-size: 16px;
-    background-color: #28a745;
-    color: #fff;
+    background-color: var(--button-background);
+    color: var(--text-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 #calculate-button:hover {
-    background-color: #218838;
+    background-color: var(--button-hover);
 }
 
 #result {
     margin-top: 20px;
+    color: var(--result-text-color);
+
     font-size: 18px;
 }
 
@@ -206,11 +232,8 @@ position:relative;
 border: solid rgba(0, 0, 0, 0.712);
 border-radius: 7px;
 appearance: none; /* إزالة التصميم الافتراضي */
-background-color: #acacac;
+background-color: var(--button-background);
 color: #000000;
 display: inline-block;
 font-size: 18px;
-}
-.navbar.dark-mode{
-    background-color: #000000;
 }
