@@ -25,9 +25,12 @@ setupToggle('toggleButton3', 'content3');
 setupToggle('toggleButton4', 'content4');
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    // نصوص الترجمة لكل لغة
-    const translations = {
+       // جلب اللغة المخزنة من localStorage أو تعيين اللغة الافتراضية (مثلاً: العربية)
+       let currentLang = localStorage.getItem('language') || 'ar';
+    // الترجمة
+    const translations = { 
         ar:{
             col:"حاسبة الزكاة",
             storys:"قصص",
@@ -106,28 +109,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 Kita semua harus belajar dari nasihat Luqman kepada putranya dan menerapkannya dalam kehidupan kita.`
         }
         
-    };
+    
+     }; // كما في الشيفرة السابقة
+     const langSelect = document.getElementById('lang');
 
-    const langSelect = document.getElementById('lang');
-    const updateText = (lang) => {
-        document.getElementById('col').textContent = translations[lang].col;
-        document.getElementById('storys').textContent = translations[lang].storys;
-        document.getElementById('nom').textContent = translations[lang].nom;
-        document.getElementById('nom2').textContent = translations[lang].nom2;
-        document.getElementById('nom3').textContent = translations[lang].nom3;
-        document.getElementById('nom4').textContent = translations[lang].nom4;
-        document.getElementById('p1').textContent = translations[lang].p1;
-        document.getElementById('p2').textContent = translations[lang].p2;
-        document.getElementById('p3').textContent = translations[lang].p3;
-        document.getElementById('p4').textContent = translations[lang].p4;
-    };
+     // دالة لتحديث النصوص بناءً على اللغة المختارة
+     const updateText = (lang) => {
+         document.getElementById('col').textContent = translations[lang].col;
+         document.getElementById('storys').textContent = translations[lang].storys;
+         document.getElementById('nom').textContent = translations[lang].nom;
+         document.getElementById('nom2').textContent = translations[lang].nom2;
+         document.getElementById('nom3').textContent = translations[lang].nom3;
+         document.getElementById('nom4').textContent = translations[lang].nom4;
+         document.getElementById('p1').textContent = translations[lang].p1;
+         document.getElementById('p2').textContent = translations[lang].p2;
+         document.getElementById('p3').textContent = translations[lang].p3;
+         document.getElementById('p4').textContent = translations[lang].p4;
+     };
 
+ 
+    
+    // تعيين اللغة الافتراضية بناءً على اللغة المخزنة أو اللغة الافتراضية
+    updateText(currentLang);
+    
+    // تحديث اللغة عند اختيارها من المستخدم
+    langSelect.value = currentLang;  // تعيين القيمة في الـ select
     langSelect.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
+        // تخزين اللغة الجديدة في localStorage
+        localStorage.setItem('language', selectedLang);
+        // تحديث النصوص بناءً على اللغة الجديدة
         updateText(selectedLang);
-    })
+    });
+ });
 
-})
+
 
 
 
