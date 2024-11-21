@@ -1,8 +1,21 @@
- // قائمة الهمبرغر
- document.getElementById('hamburger').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    navLinks.classList.toggle('show'); // إضافة أو إزالة الفئة 'show'
+    
+    // التعامل مع قائمة الهامبورغر
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show'); // إضافة أو إزالة الفئة 'show'
+    });
+
+    // إخفاء القائمة إذا تم النقر خارجها
+    document.addEventListener('click', (event) => {
+        // التحقق إذا كان النقر خارج زر الهامبورغر أو القائمة
+        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+            navLinks.classList.remove('show'); // إخفاء القائمة
+        }
+    });
 });
+
 function setupToggle(buttonId, contentId) {
     const toggleButton = document.getElementById(buttonId);
     const content = document.getElementById(contentId);
