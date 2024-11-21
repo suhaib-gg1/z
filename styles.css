@@ -147,6 +147,7 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-color);
+    border: 2px solid #000000;
 
 }
 
@@ -166,6 +167,8 @@ input {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    border: 1px solid;
+
 }
 
 #calculate-button:hover {
