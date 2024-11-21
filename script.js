@@ -1,3 +1,22 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    
+    // التعامل مع قائمة الهامبورغر
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('show'); // إضافة أو إزالة الفئة 'show'
+    });
+
+    // إخفاء القائمة إذا تم النقر خارجها
+    document.addEventListener('click', (event) => {
+        // التحقق إذا كان النقر خارج زر الهامبورغر أو القائمة
+        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+            navLinks.classList.remove('show'); // إخفاء القائمة
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
     const translations = {
@@ -45,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSelect = document.getElementById('lang');
 
    // استرجاع اللغة المخزنة من localStorage
-   const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
-   langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
-   const updateText = (lang) => {
+    const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
+    langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
+    const updateText = (lang) => {
         document.getElementById('story').textContent = translations[lang].story;
         document.getElementById('z').textContent = translations[lang].z;
         document.getElementById('total-wealth-label').textContent = translations[lang].totalWealthLabel;
@@ -89,12 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-    // قائمة الهمبرغر
-    document.getElementById('hamburger').addEventListener('click', () => {
-        const navLinks = document.getElementById('nav-links');
-        navLinks.classList.toggle('show'); // إضافة أو إزالة الفئة 'show'
-    })});
+});
 
 
 
