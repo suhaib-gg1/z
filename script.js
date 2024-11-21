@@ -42,9 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'SR'
         }
     };
-
     const langSelect = document.getElementById('lang');
-    const updateText = (lang) => {
+
+   // استرجاع اللغة المخزنة من localStorage
+   const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
+   langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
+   const updateText = (lang) => {
         document.getElementById('story').textContent = translations[lang].story;
         document.getElementById('z').textContent = translations[lang].z;
         document.getElementById('total-wealth-label').textContent = translations[lang].totalWealthLabel;
@@ -52,12 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('calculate-button').textContent = translations[lang].calculateButton;
     };
 
+    // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
     langSelect.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         updateText(selectedLang);
+        localStorage.setItem('language', selectedLang); // تخزين اللغة في localStorage
     });
 
-
+    // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
+    updateText(savedLang);
 
 
 
