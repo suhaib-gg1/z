@@ -6,6 +6,8 @@
     --button-hover: #218838; /* اللون عند التمرير على الزر */
     --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
     --result-text-color: #000;
+    --lang-background:#ffffff;
+
 }
 
 body.dark-mode {
@@ -16,6 +18,8 @@ body.dark-mode {
     --button-hover: #666;
     --container-background: #444;
     --result-text-color: #fff;
+    --lang-background:#f0f0f0;
+
 }
 
 
@@ -56,7 +60,7 @@ body {
     padding: 10px 40px 10px 15px; /* حشوة داخلية */
     border: 2px solid #007BFF; /* لون الحدود */
     border-radius: 5px; /* زوايا مدورة */
-    background-color: #ffffff; /* لون الخلفية */
+    background-color: var(--lang-background); /* لون الخلفية */
     color: #333; /* لون النص */
     font-size: 16px; /* حجم الخط */
     cursor: pointer; /* تغيير المؤشر عند التمرير */
@@ -84,6 +88,9 @@ body {
         right: 50px;          /* تحديد المسافة من الجهة اليمنى */
         top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
         transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    }
+.hamburger:hover{
+        color: #007BFF;
     }
 
 
