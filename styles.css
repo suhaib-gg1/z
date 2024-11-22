@@ -6,6 +6,9 @@
     --button-hover: #218838; /* اللون عند التمرير على الزر */
     --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
     --result-text-color: #000;
+    --h-color:#000;
+    --input-background:#ffffff;
+    --lang-background:#ffffff;
 }
 
 body.dark-mode {
@@ -16,6 +19,10 @@ body.dark-mode {
     --button-hover: #666;
     --container-background: #444;
     --result-text-color: #fff;
+    --h-color:#ffffff;
+    --input-background:#c2c2c2;
+    --lang-background:#f0f0f0;
+
 }
 
 body {
@@ -54,7 +61,7 @@ body {
     padding: 10px 40px 10px 15px; /* حشوة داخلية */
     border: 2px solid #007BFF; /* لون الحدود */
     border-radius: 5px; /* زوايا مدورة */
-    background-color: #ffffff; /* لون الخلفية */
+    background-color: var(--lang-background); /* لون الخلفية */
     color: #333; /* لون النص */
     font-size: 16px; /* حجم الخط */
     cursor: pointer; /* تغيير المؤشر عند التمرير */
@@ -75,12 +82,15 @@ body {
 
 .hamburger {
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: var(--h-color);
     cursor: pointer;
     position: absolute;  /* لجعل الهامبرغر في أقصى اليمين */
     right: 50px;          /* تحديد المسافة من الجهة اليمنى */
     top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
     transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+}
+.hamburger:hover{
+    color: #007BFF;
 }
 
 
@@ -154,9 +164,9 @@ input {
     margin-bottom: 20px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
     border: 2px solid #000000;
+    border-radius: 4px;
+    background-color: var(--input-background);
 }
 
 #calculate-button {
@@ -168,7 +178,6 @@ input {
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid;
-
 }
 
 #calculate-button:hover {
@@ -240,3 +249,4 @@ color: #000000;
 display: inline-block;
 font-size: 18px;
 }
+
