@@ -9,7 +9,9 @@
     --h-color:#000;
     --input-background:#ffffff;
     --lang-background:#ffffff;
- 
+    --shadow-box: 0 0 20px #a30707;
+    --hum-color: #e40000;
+
 }
 
 body.dark-mode {
@@ -23,6 +25,8 @@ body.dark-mode {
     --h-color:#ffffff;
     --input-background:#c2c2c2;
     --lang-background:#f0f0f0;
+    --shadow-box: 0 0 20px #007BFF;
+    --hum-color:  #007BFF;
 
 }
 
@@ -91,7 +95,7 @@ body {
     transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
 }
 .hamburger:hover{
-    color: #007BFF;
+    color: var(--hum-color);
 }
 
 
@@ -136,7 +140,7 @@ body {
     padding: 20px;
     background: var(--container-background);
     border-radius: 8px;
-    box-shadow: 0 0 20px rgb(163, 7, 7);
+    box-shadow: var(--shadow-box);
     height: 360px;
     transition: background-color 0.3s; /* انتقال سلس */
 }
