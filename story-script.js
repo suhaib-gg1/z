@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // الترجمة
     const translations = { 
         ar:{
+            chz: 'تحدي حساب الزكاة',
             col:"حاسبة الزكاة",
             storys:"قصص",
             nom:"عائشة -رضي الله عنها- و العنبة",
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         },
         en: {
+            chz: 'Zakat Calculation Challenge',
             col:"Zakat Calculator",
             storys: "Stories",
             nom:"Aisha - may God be pleased with her - and grapes",
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     },
         ur: {
+            chz: 'زکات کیلکولیشن چیلنج',
             col:"زکات کیلکولیٹر",
             storys: "کہانیاں",
             nom: "عائشہ - اللہ ان سے راضی ہو - اور انگور",
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         
         id: {
+            chz: 'Tantangan Perhitungan Zakat',
             col:"Kalkulator Zakat",
             storys: "Cerita",
             nom: "Aisha - semoga Allah meridhoi dia - dan anggur",
@@ -155,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('p3').textContent = translations[lang].p3;
          document.getElementById('p4').textContent = translations[lang].p4;
          document.getElementById('p5').textContent = translations[lang].p5;
+         document.getElementById('chz').textContent = translations[lang].chz;
 
      };
 
