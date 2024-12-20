@@ -134,6 +134,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 20px rgb(163, 7, 7);
     height: auto;
+    margin-bottom: 20px;
+
 }
 .img {
     border: 0;
@@ -154,7 +156,8 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.822);
     height: auto;
     transition: background-color 0.1s; /* انتقال سلس */
-border: 1px solid red;}
+    border: 1px solid red;
+}
 
 .arrow {
     cursor: pointer;
