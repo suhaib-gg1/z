@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زكاتي</title>
+    <link rel="stylesheet" href="trin.css">
+    <link rel="icon" href="z.icon">
+</head>
+<body>
+    <div>
+    
+
+    <div class="navbar">
+        <div class="b">
+            <div class="select-wrapper">
+                <select id="lang">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                    <option value="ur">اردو</option>
+                    <option value="id">Indonesia</option>
+                </select>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- رمز همبرغر -->
+        </div>
+        <ul class="nav-links" id="nav-links" dir="rtl">
+            <li><a id="story" href="index.html">حاسبة الزكاة</a></li>
+            <li><a id="story" href="story-page.html">قصص</a></li>
+            <button class="m" id="toggle-dark-mode" title="تبديل الوضع">🌚</button>
+            
+        </ul>
+        <div class="img"  style="right: 110px;">
+            <img src="snapedit_1730146554309.png" width="120"  alt="Logo" >
+        </div>
+    </div>
+   
+    <div class="container" dir="auto">
+        <h1 id="chz">تحدي حساب الزكاة</h1>
+        <div class="Q">
+            
+            <p id="randomNumber"></p>
+            <input class="userAnswer"  type="number" id="userAnswer">
+            <button class="f" id="checkAnswer">تحقق الإجابة</button>
+        </div>
+        <button class="f" id="changeNumber">تغيير الرقم</button>
+        <div id="result"></div>
+    </div>
+</div>
+  </div>
+    <script src="trin.js"></script>
+</body>
+</html>
