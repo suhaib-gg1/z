@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
     const translations = {
         ar: {
+            chz: 'تحدي حساب الزكاة',
             story: "قصص",
             z: 'حاسبة الزكاة',
             totalWealthLabel: 'المال الذي حال عليه الحول (بالريال):',
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ريال'
         },
         en: {
+            chz: 'Zakat Calculation Challenge',
             story: "storys",
             z: 'Zakat Calculator',
             totalWealthLabel: 'Money over which one year has passed (in Riyals):',
@@ -41,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'SR'
         },
         ur: {
+            chz: 'زکات کیلکولیشن چیلنج',
             story: "کہانیاں",
             z: 'زکات کیلکولیٹر',
             totalWealthLabel: 'وہ پیسہ جس پر ایک سال گزر چکا ہے (ریال میں):',
@@ -51,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ریال'
         },
         id: {
+            chz: 'Tantangan Perhitungan Zakat',
             story: "cerita",
             z: 'Kalkulator Zakat',
             totalWealthLabel: 'Uang yang telah genap setahun (dalam Riyal):',
@@ -67,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
     langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
     const updateText = (lang) => {
+        document.getElementById('chz').textContent = translations[lang].chz;
         document.getElementById('story').textContent = translations[lang].story;
         document.getElementById('z').textContent = translations[lang].z;
         document.getElementById('total-wealth-label').textContent = translations[lang].totalWealthLabel;
