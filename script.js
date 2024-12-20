@@ -93,22 +93,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Handle form submission
-    document.getElementById('zakah-form').addEventListener('submit', function(event) {
-        event.preventDefault();
+// Handle form submission
+document.getElementById('zakah-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        // الحصول على القيم من النموذج
-        const totalWealth = parseFloat(document.getElementById('total-wealth').value);
-        const debt = parseFloat(document.getElementById('debt').value);
+    // الحصول على القيم من النموذج
+    const totalWealth = parseFloat(document.getElementById('total-wealth').value) || 0;
+    const debt = parseFloat(document.getElementById('debt').value) || 0;
 
-        // حساب الزكاة
-        const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
+    // حساب الزكاة
+    const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
 
-        // عرض النتيجة
-        const selectedLang = langSelect.value;
-        const resultText = translations[selectedLang].resultText;
-        document.getElementById('result').textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
-    });
+    // التحقق من اختيار اللغة
+    const langSelect = document.getElementById('lang-select'); // إضافة تعريف langSelect
+    const selectedLang = langSelect.value;
+
+    // النصوص المترجمة
+    const translations = {
+        en: { resultText: "Your zakah amount is", a: "USD" },
+        ar: { resultText: "مقدار الزكاة هو", a: "ريال" }
+    };
+
+    // عرض النتيجة
+    const resultText = translations[selectedLang].resultText;
+    document.getElementById('result').textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
+});
 
 
 
