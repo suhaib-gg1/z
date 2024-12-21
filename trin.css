@@ -11,8 +11,11 @@
     --lang-background:#ffffff;
     --nomb-background:#ffffff;
     --nom-border: solid #e40000;
-   --shadow-box: 0 0 20px #a30707;
+   --shadow-box: 0 0 20px #dd0000;
    --hum-color: #e40000;
+   --ar-box: 0 0 5px rgba(255, 0, 0, 0.5);;
+   --nom2-border: 2px solid #e40000;
+
 }
 
 body.dark-mode {
@@ -30,6 +33,8 @@ body.dark-mode {
     --nom-border: solid #007BFF;;
     --shadow-box: 0 0 20px #007BFF;
     --hum-color:  #007BFF;
+    --ar-box: 0 0 5px rgba(0, 204, 255, 0.562);;
+    --nom2-border: 2px solid #007BFF;
 
 }
 
@@ -67,7 +72,7 @@ body {
 #lang {
     appearance: none; /* إزالة التصميم الافتراضي */
     padding: 10px 40px 10px 15px; /* حشوة داخلية */
-    border: 2px solid #007BFF; /* لون الحدود */
+    border:var(--nom2-border); /* لون الحدود */
     border-radius: 5px; /* زوايا مدورة */
     background-color: var(--lang-background); /* لون الخلفية */
     color: #333; /* لون النص */
@@ -77,8 +82,8 @@ body {
 }
 #lang:focus {
     outline: none; /* إزالة الحدود عند التركيز */
-    border-color: #66afe9; /* لون الحدود عند التركيز */
-    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5); /* ظل عند التركيز */
+  
+    box-shadow:var(--ar-box) /* ظل عند التركيز */
 }
 #lang:hover + .select-wrapper::after {
     transform: translateY(-50%) rotate(180deg); /* دوران السهم عند التمرير */
@@ -205,7 +210,7 @@ select:focus {
     right: 10px; /* المسافة من اليمين */
     transform: translateY(-50%); /* توسيط السهم */
     pointer-events: none; /* منع التفاعل مع السهم */
-    color: #007BFF; /* لون السهم */
+    color: var(--hum-color); /* لون السهم */
     font-size: 18px; /* حجم السهم */
     transition: transform 0.3s; /* تأثير عند التغيير */
 }
