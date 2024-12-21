@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
-    updateText(savedLang);
 
 
 
@@ -112,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    updateText(savedLang);
 
 });
 
