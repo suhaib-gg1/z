@@ -20,22 +20,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
     const translations = {
         ar: {
+            story: "قصص",
+            col:"حاسبة الزكاة",
             chz: 'تحدي حساب الزكاة',
             checkAnswer: 'تحقق الإجابة',
             changeNumber: 'تغيير الرقم',
             no:'الإجابة غير صحيحة. الإجابة الصحيحة هي',
         },
         en: {
+            story: "storys",
+            col:"Zakat Calculator",
             chz: 'Zakat Calculation Challenge',
             checkAnswer: 'Check Answer',
             changeNumber: 'Change Number',
         },
         ur: {
+            story: "کہانیاں",
+            col:"زکات کیلکولیٹر",
             chz: 'زکات کیلکولیشن چیلنج',
             checkAnswer: 'جواب چیک کریں',
             changeNumber: 'نیا نمبر تبدیل کریں',
         },
         id: {
+            story: "cerita",
+            col:"Kalkulator Zakat",
             chz: 'Tantangan Perhitungan Zakat',
             checkAnswer: 'Periksa Jawaban',
             changeNumber: 'Ganti Angka',
@@ -47,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
     langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
     const updateText = (lang) => {
+        document.getElementById('story').textContent = translations[lang].story;
+        document.getElementById('col').textContent = translations[lang].col;
         document.getElementById('chz').textContent = translations[lang].chz;
         document.getElementById('userAnswer').textContent = translations[lang].userAnswer;
         document.getElementById('checkAnswer').textContent = translations[lang].checkAnswer;
