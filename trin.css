@@ -313,3 +313,21 @@ input[type="number"]:focus {
     color: green;  /* تغيير اللون إلى الأخضر عند الإجابة الصحيحة */
     font-size: 30px;  /* تغيير الحجم قليلاً */
 }
+#scoreDisplay {
+    font-size: 25px;
+    font-weight: bold;
+    position: fixed;
+    top: 255px;
+    left: 69%;
+    transform: translateX(-50%) ;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000; /* تأكد من ظهورها فوق العناصر الأخرى */
+}
+
+/* إضافة تأثير لتغيير لون النقاط */
+#scoreDisplay.green {
+    color: green;
+}
