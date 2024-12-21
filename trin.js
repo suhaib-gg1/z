@@ -136,10 +136,6 @@ function checkAnswer() {
     resultDiv.classList.remove("hidden");
 }
 
-    // إظهار النتيجة
-    resultDiv.classList.remove("hidden");
-}
-
 // إضافة الأحداث إلى الأزرار
 document.getElementById("checkAnswer").addEventListener("click", checkAnswer);
 document.getElementById("changeNumber").addEventListener("click", updateRandomNumber);
