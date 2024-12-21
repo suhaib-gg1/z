@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Luqman concluded his advice to his son by advising him to be moderate and balanced in all matters, even when walking, so he should neither walk too quickly nor too slowly. He also ordered him to lower his voice when speaking, as this shows respect for others.
 
         We should all learn from Luqman's advice to his son and apply it in our lives.`,
-        nom5: "The story of Prophet Idris (peace be upon him)",
+        nom5: "The story about our Prophet Idris (peace be upon him)",
         p5: "It is mentioned that Prophet Idris (peace be upon him) was the first to write with a pen and the first to wear clothes. Our Prophet Muhammad (peace be upon him) mentioned that he saw Idris in the fourth heaven. Allah described him in the Qur'an as one of the patient and righteous "
         
     
