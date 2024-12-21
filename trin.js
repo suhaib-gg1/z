@@ -94,7 +94,17 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('toggle-dark-mode').textContent = '🌚';
         }
     });
-})
+});
+// متغير لتخزين النقاط
+let score = parseInt(localStorage.getItem('score')) || 0;  // استرجاع النقاط من localStorage إذا كانت موجودة
+
+// تحديث عرض النقاط في الصفحة
+function updateScore() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    scoreDisplay.textContent = ` ${score}`;
+    localStorage.setItem('score', score);  // حفظ النقاط في localStorage
+}
+
 // وظيفة لتوليد رقم عشوائي من مضاعفات 10 بين 1 و 100000
 function generateRandomNumber() {
     return Math.floor(Math.random() * 10000) * 10 + 10;
@@ -122,19 +132,40 @@ function checkAnswer() {
 
     // إزالة أي تأثيرات سابقة
     resultDiv.classList.remove("correct-answer");
+     // تعطيل الزر لمنع الإجابة مجددًا
+     document.getElementById("checkAnswer").disabled = true;
+
     
     if (userAnswer === correctAnswer) {
-        resultDiv.textContent = "🎉✨🏆";  // إضافة نص مميز عند الإجابة الصحيحة
-        resultDiv.style.color = "green";  // تغيير اللون إلى الأخضر
+        resultDiv.textContent = "🎉✨🏆";
+        resultDiv.style.color = "green";
         resultDiv.classList.add("correct-answer");  // إضافة التأثير
+        score++; // زيادة النقاط عند الإجابة الصحيحة
+        document.getElementById('scoreDisplay').classList.add('green');
+            
+          // تحديد المدة التي سيظل فيها الزر معطلاً (مثلاً لمدة 1 ثانية)
+    // تعطيل الزر لمدة ثانيتين ثم إعادة تفعيله
+    setTimeout(() => {
+        document.getElementById("checkAnswer").disabled = false;  // إعادة تفعيل الزر بعد 2 ثانية
+        updateRandomNumber(); // تحديث الرقم العشوائي الجديد بعد إعادة تفعيل الزر
+    }, 400); // تعطيل الزر لمدة 2 ثانية
     } else {
-        resultDiv.textContent = `الإجابة الصحيحة هي: ${correctAnswer}`;  // عرض الإجابة الصحيحة عند الخطأ
-        resultDiv.style.color = "red";  // تغيير اللون إلى الأحمر
+        resultDiv.textContent = `الإجابة الصحيحة هي: ${correctAnswer}`;
+        resultDiv.style.color = "red";
+        document.getElementById('scoreDisplay').classList.remove('green');
+        setTimeout(() => {
+            // تحديث السؤال بعد المدة المحددة
+            updateRandomNumber(); // تحديث السؤال الجديد
+            document.getElementById("checkAnswer").disabled = false;  // إعادة تفعيل الزر
+        }, 1500);  // تعطيل الزر لمدة 1 ثانية (1000 ملي ثانية)
+        
     }
 
-    // إظهار النتيجة
     resultDiv.classList.remove("hidden");
+    updateScore(); // تحديث عرض النقاط
 }
+
+
 
 
 // إضافة الأحداث إلى الأزرار
@@ -151,3 +182,5 @@ document.getElementById("userAnswer").addEventListener("keydown", function(event
 
 // عند تحميل الصفحة، نعرض الرقم العشوائي لأول مرة
 window.onload = updateRandomNumber;
+// عند تحميل الصفحة، نعرض النقاط المخزنة
+updateScore();
