@@ -120,13 +120,21 @@ function checkAnswer() {
     const correctAnswer = (window.currentRandomNumber * 2.5) / 100;
     const resultDiv = document.getElementById("result");
 
+    // إزالة أي تأثيرات سابقة
+    resultDiv.classList.remove("correct-answer");
+    
     if (userAnswer === correctAnswer) {
-        resultDiv.textContent = "🎉✨🏆";
-        resultDiv.style.color = "green";
+        resultDiv.textContent = "🎉✨🏆";  // إضافة نص مميز عند الإجابة الصحيحة
+        resultDiv.style.color = "green";  // تغيير اللون إلى الأخضر
+        resultDiv.classList.add("correct-answer");  // إضافة التأثير
     } else {
-        resultDiv.textContent = ` ${correctAnswer}`;
-        resultDiv.style.color = "red";
+        resultDiv.textContent = `الإجابة الصحيحة هي: ${correctAnswer}`;  // عرض الإجابة الصحيحة عند الخطأ
+        resultDiv.style.color = "red";  // تغيير اللون إلى الأحمر
     }
+
+    // إظهار النتيجة
+    resultDiv.classList.remove("hidden");
+}
 
     // إظهار النتيجة
     resultDiv.classList.remove("hidden");
