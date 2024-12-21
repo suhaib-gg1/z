@@ -291,3 +291,25 @@ input[type="number"]:focus {
 .hidden {
     display: none;
 }
+/* تأثير تكبير مع تلاشي */
+@keyframes correct-answer {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* عند الإجابة الصحيحة */
+.correct-answer {
+    animation: correct-answer 1s ease-out;
+    color: green;  /* تغيير اللون إلى الأخضر عند الإجابة الصحيحة */
+    font-size: 30px;  /* تغيير الحجم قليلاً */
+}
