@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('userAnswer').textContent = translations[lang].userAnswer;
         document.getElementById('checkAnswer').textContent = translations[lang].checkAnswer;
         document.getElementById('changeNumber').textContent = translations[lang].changeNumber;
+        
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
