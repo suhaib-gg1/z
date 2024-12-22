@@ -62,7 +62,7 @@ setupToggle('toggleButton3', 'content3');
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-    const translations = {
+      const translations = {
         ar: {
             story: "قصص",
             col: "حاسبة الزكاة",
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             t: "القائمون على هذا التطبيق",
             nom1: "💻الموقع والتطبيق💻",
             nom2: "📝الشرح داخل الفصل📝",
-            nom3: "📊العروض التقديمية",
+            nom3: "📊العروض التقديمية📊",
             p1: "صهيب بوزيدان",
             name1: "1- صهيب بوزيدان",
             name2: "2-عبدالرحمن خطيري",
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             t: "The creators of this application",
             nom1: "💻Website and App💻",
             nom2: "📝Explanation Inside the Class📝",
-            nom3: "📊Presentations",
+            nom3: "📊Presentations📊",
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
             t: "اس ایپلیکیشن کے تخلیق کار",
             nom1: "💻ویب سائٹ اور ایپ💻",
             nom2: "📝کلاس میں وضاحت📝",
-            nom3: "📊پریزنٹیشنز",
+            nom3: "📊پریزنٹیشنز📊",
             p1: "صہیب بوزیدان",
             name1: "1- صہیب بوزیدان",
             name2: "2- عبدالرحمن خطیری",
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             t: "Pencipta aplikasi ini",
             nom1: "💻Situs web dan Aplikasi💻",
             nom2: "📝Penjelasan di Kelas📝",
-            nom3: "📊Presentasi",
+            nom3: "📊Presentasi📊",
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "Wadi' Abu Yusuf",
         }
     };
+    
     
     const langSelect = document.getElementById('lang');
 
