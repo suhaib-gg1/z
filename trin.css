@@ -316,9 +316,9 @@ input[type="number"]:focus {
 #scoreDisplay {
     font-size: 25px;
     font-weight: bold;
-    position: fixed;
-    top: 255px;
-    left: 69%;
+    position:relative;
+    top: 0;
+    left: 7%;
     transform: translateX(-50%) ;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
