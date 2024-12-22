@@ -18,10 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-    const translations = {
+      const translations = {
         ar: {
             story: "قصص",
             col:"حاسبة الزكاة",
+            about:"القائمون على هذا التطبيق",
             chz: 'تحدي حساب الزكاة',
             checkAnswer: 'تحقق الإجابة',
             changeNumber: 'تغيير الرقم',
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             story: "storys",
             col:"Zakat Calculator",
+            about:"The creators of this application",
             chz: 'Zakat Calculation Challenge',
             checkAnswer: 'Check Answer',
             changeNumber: 'Change Number',
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ur: {
             story: "کہانیاں",
             col:"زکات کیلکولیٹر",
+            about:"اس ایپلیکیشن کے تخلیق کار",
             chz: 'زکات کیلکولیشن چیلنج',
             checkAnswer: 'جواب چیک کریں',
             changeNumber: 'نیا نمبر تبدیل کریں',
@@ -44,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: {
             story: "cerita",
             col:"Kalkulator Zakat",
+            about:"Pencipta aplikasi ini",
             chz: 'Tantangan Perhitungan Zakat',
             checkAnswer: 'Periksa Jawaban',
             changeNumber: 'Ganti Angka',
@@ -61,6 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('userAnswer').textContent = translations[lang].userAnswer;
         document.getElementById('checkAnswer').textContent = translations[lang].checkAnswer;
         document.getElementById('changeNumber').textContent = translations[lang].changeNumber;
+        document.getElementById('about').textContent = translations[lang].about;
+
         
     };
 
