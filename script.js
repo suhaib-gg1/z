@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-    const translations = {
+     const translations = {
         ar: {
             chz: 'تحدي حساب الزكاة',
             story: "قصص",
+            about:"القائمون على هذا التطبيق",
             z: 'حاسبة الزكاة',
             totalWealthLabel: 'المال الذي حال عليه الحول (بالريال):',
             debtLabel: 'الدين (بالريال):',
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             chz: 'Zakat Calculation Challenge',
             story: "storys",
+            about:"The creators of this application",
             z: 'Zakat Calculator',
             totalWealthLabel: 'Money over which one year has passed (in Riyals):',
             debtLabel: 'Debt (in Riyals):',
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ur: {
             chz: 'زکات کیلکولیشن چیلنج',
             story: "کہانیاں",
+            about:"اس ایپلیکیشن کے تخلیق کار",
             z: 'زکات کیلکولیٹر',
             totalWealthLabel: 'وہ پیسہ جس پر ایک سال گزر چکا ہے (ریال میں):',
             debtLabel: 'قرض (ریال میں):',
@@ -56,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: {
             chz: 'Tantangan Perhitungan Zakat',
             story: "cerita",
+            about:"Pencipta aplikasi ini",
             z: 'Kalkulator Zakat',
             totalWealthLabel: 'Uang yang telah genap setahun (dalam Riyal):',
             debtLabel: 'Hutang (dalam Riyal):',
@@ -77,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('total-wealth-label').textContent = translations[lang].totalWealthLabel;
         document.getElementById('debt-label').textContent = translations[lang].debtLabel;
         document.getElementById('calculate-button').textContent = translations[lang].calculateButton;
+        document.getElementById('about').textContent = translations[lang].about;
+
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
