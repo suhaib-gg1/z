@@ -329,5 +329,4 @@ input[type="number"]:focus {
 
 /* إضافة تأثير لتغيير لون النقاط */
 #scoreDisplay.green {
-    color: green;
-}
+ color: rgb(94, 255, 0);}
