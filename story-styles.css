@@ -233,3 +233,34 @@ select:focus {
 
 
 }
+
+/* إضافة تأثير الأنيميشن لجميع العناصر التي تحمل الفئة fade-in */
+.fade-in {
+    opacity: 0; /* بدء العنصر بشفافية 0 (غير مرئي) */
+    transform: translateY(20px); /* بدء العنصر بعيدًا عن موقعه */
+    animation: fadeInUp 1.5s forwards; /* تشغيل الأنيميشن */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* البدء من الأسفل */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* النهاية في الموقع الطبيعي */
+    }
+}
+
+/* تأثير الظهور التدريجي للـ navbar */
+.navbar {
+    opacity: 0;
+    animation: fadeInUp .5s forwards;
+}
+
+/* تأثير الظهور التدريجي للمحتوى */
+.story {
+    opacity: 0;
+    animation: fadeInUp .7s forwards;
+}
+
