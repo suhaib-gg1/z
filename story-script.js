@@ -44,14 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
        // جلب اللغة المخزنة من localStorage أو تعيين اللغة الافتراضية (مثلاً: العربية)
        let currentLang = localStorage.getItem('language') || 'ar';
     // الترجمة
-     const translations = { 
+    const translations = { 
         ar:{
             chz: 'تحدي حساب الزكاة',
             col:"حاسبة الزكاة",
             about:"القائمون على هذا التطبيق",
             storys:"قصص",
             nom:"عائشة -رضي الله عنها- و العنبة",
-            p1:"جاء مسكين إلى عائشة -رضي الله عنها- فطلب منها الصدقة، فبحثت السيدة عائشة في البيت فلم تجد إلا عنبة واحدة فأعطته إياها، فقال أحدهم: ما تغني هذه العنبة؟ قالت: إن فيها ذرات كثيرة لأن الله يقول: (فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ* وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ)؛ بل شق التمرة يكتبها الله -تعالى- عنده، وأصغر من ذلك الذرة الواحدة. ",
+            p1:"جاء مسكين إلى عائشة -رضي الله عنها- فطلب منها الصدقة، فبحثت السيدة عائشة في البيت فلم تجد إلا عنبة واحدة فأعطته إياها، فقال أحدهم: ما تغني هذه العنبة؟ قالت: إن فيها ذرات كثيرة لأن الله يقول: (وقرأت سورة الزلزلة7,8)؛ بل شق التمرة يكتبها الله -تعالى- عنده، وأصغر من ذلك الذرة الواحدة. ",
             nom2:"عثمان بن عفان -رضي الله عنه- و البئر.", 
             p2:"عندما أصاب الناس القحط والمجاعة والمشقة نادى رسول الله -صلى الله عليه وسلم-: (مَن يشتَري بئرَ رومةَ فيجعَلُ فيها دلوَهُ معَ دلاءِ المسلمينَ بخيرٍ لَهُ منها في الجنَّةِ)، فاشتراها عثمان بن عفان -رضي الله عنه-.",
             nom3:"قصة سورة قريش",  
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about:"The creators of this application",
             storys: "Stories",
             nom:"Aisha - may God be pleased with her - and grapes",
-            p1:"A poor person came to Aisha - may God be pleased with her - and asked her for alms. Mrs. Aisha searched the house and found only one grape, so she gave it to him. One of them said: What is the use of this grape? She said: It contains many atoms because God says: (So whoever does an atom’s weight of good will see it* and whoever does an atom’s weight of evil will see it); Rather, the portion of a date is recorded by God Almighty with Him, and it is smaller than that of a single corn.",
+            p1:"A poor person came to Aisha - may God be pleased with her - and asked her for alms. Mrs. Aisha searched the house and found only one grape, so she gave it to him. One of them said: What is the use of this grape? She said: It contains many atoms because God says: (And I recited Surat Al-Zalzalah 7,8); Rather, the portion of a date is recorded by God Almighty with Him, and it is smaller than that of a single corn.",
             nom2:"Othman bin Affan - may God be pleased with him - and the well.",
             p2:"When people were struck by drought, famine, and hardship, the Messenger of God - may God bless him and grant him peace - called: (Whoever buys the well of Rumah and puts his bucket in it with the buckets of the Muslims, will be better for him in Paradise), so Othman bin Affan - may God be pleased with him - bought it.",
             nom3:"The story of Surat Quraish",
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about:"اس ایپلیکیشن کے تخلیق کار",
             storys: "کہانیاں",
             nom: "عائشہ - اللہ ان سے راضی ہو - اور انگور",
-            p1: "ایک غریب شخص عائشہ - اللہ ان سے راضی ہو - کے پاس آیا اور ان سے صدقہ طلب کیا۔ عائشہ نے گھر میں تلاش کیا اور صرف ایک انگور پایا، تو انہوں نے اسے دے دیا۔ ایک شخص نے کہا: اس انگور کا کیا فائدہ؟ انہوں نے کہا: اس میں بہت سی ذرات ہیں کیونکہ اللہ فرماتا ہے: (پس جو شخص ایک ذرہ کے برابر نیکی کرے گا وہ اسے دیکھے گا* اور جو ایک ذرہ کے برابر برائی کرے گا وہ اسے دیکھے گا)؛ بلکہ ایک کھجور کا حصہ اللہ تعالیٰ کے پاس لکھا جاتا ہے، اور یہ ایک اکیلے دانے سے بھی چھوٹا ہے۔",
+            p1: "ایک غریب شخص عائشہ - اللہ ان سے راضی ہو - کے پاس آیا اور ان سے صدقہ طلب کیا۔ عائشہ نے گھر میں تلاش کیا اور صرف ایک انگور پایا، تو انہوں نے اسے دے دیا۔ ایک شخص نے کہا: اس انگور کا کیا فائدہ؟ انہوں نے کہا: اس میں بہت سی ذرات ہیں کیونکہ اللہ فرماتا ہے: (اور میں نے سورۃ الزلزلہ 7،8 پڑھی۔)؛ بلکہ ایک کھجور کا حصہ اللہ تعالیٰ کے پاس لکھا جاتا ہے، اور یہ ایک اکیلے دانے سے بھی چھوٹا ہے۔",
             nom2: "عثمان بن عفان - اللہ ان سے راضی ہو - اور کنواں۔",
             p2: "جب لوگوں کو خشک سالی، قحط اور مشکلات کا سامنا کرنا پڑا تو رسول اللہ - اللہ ان پر درود بھیجے - نے پکارا: (کون رُمہ کے کنویں کو خریدے گا اور اپنی بالٹی مسلمانوں کی بالٹیوں کے ساتھ رکھے گا، اس کے لیے جنت میں بہتر ہوگا)، تو عثمان بن عفان - اللہ ان سے راضی ہو - نے اسے خریدا۔",
             nom3: "سورۃ قریش کی کہانی",
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             about:"Pencipta aplikasi ini",
             storys: "Cerita",
             nom: "Aisha - semoga Allah meridhoi dia - dan anggur",
-            p1: "Seorang miskin datang kepada Aisha - semoga Allah meridhoi dia - dan meminta sedekah. Nyonya Aisha mencari di rumah dan hanya menemukan satu anggur, jadi dia memberikannya kepadanya. Salah seorang berkata: Apa gunanya anggur ini? Dia berkata: Di dalamnya terdapat banyak atom karena Allah berfirman: (Jadi siapa yang melakukan kebaikan seberat atom akan melihatnya* dan siapa yang melakukan kejahatan seberat atom akan melihatnya); Bahkan, sepotong kurma dicatat oleh Allah Yang Mahakuasa di sisinya, dan itu lebih kecil dari satu butir. ",
+            p1: "Seorang miskin datang kepada Aisha - semoga Allah meridhoi dia - dan meminta sedekah. Nyonya Aisha mencari di rumah dan hanya menemukan satu anggur, jadi dia memberikannya kepadanya. Salah seorang berkata: Apa gunanya anggur ini? Dia berkata: Di dalamnya terdapat banyak atom karena Allah berfirman: (Dan saya membaca Surat Al-Zalzalah 7,8); Bahkan, sepotong kurma dicatat oleh Allah Yang Mahakuasa di sisinya, dan itu lebih kecil dari satu butir. ",
             nom2: "Utsman bin Affan - semoga Allah meridhoi dia - dan sumur.",
             p2: "Ketika orang-orang dilanda kemarau, kelaparan, dan kesulitan, Rasul Allah - semoga Allah memberinya berkah dan keselamatan - berseru: (Siapa yang membeli sumur Rumah dan meletakkan embernya di sana bersama ember-ember orang Muslim, maka itu lebih baik baginya di surga), maka Utsman bin Affan - semoga Allah meridhoi dia - membelinya.",
             nom3: "Kisah Surat Quraisy",
