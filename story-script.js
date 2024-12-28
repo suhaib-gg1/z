@@ -44,11 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
        // جلب اللغة المخزنة من localStorage أو تعيين اللغة الافتراضية (مثلاً: العربية)
        let currentLang = localStorage.getItem('language') || 'ar';
     // الترجمة
-    const translations = { 
-        ar:{
+   ar:{
             chz: 'تحدي حساب الزكاة',
             col:"حاسبة الزكاة",
-            about:"القائمون على هذا التطبيق",
+            about:"عَنْ",
             storys:"قصص",
             nom:"عائشة -رضي الله عنها- و العنبة",
             p1:"جاء مسكين إلى عائشة -رضي الله عنها- فطلب منها الصدقة، فبحثت السيدة عائشة في البيت فلم تجد إلا عنبة واحدة فأعطته إياها، فقال أحدهم: ما تغني هذه العنبة؟ قالت: إن فيها ذرات كثيرة لأن الله يقول: (وقرأت سورة الزلزلة7,8)؛ بل شق التمرة يكتبها الله -تعالى- عنده، وأصغر من ذلك الذرة الواحدة. ",
@@ -64,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             chz: 'Zakat Calculation Challenge',
             col:"Zakat Calculator",
-            about:"The creators of this application",
+            about:"about",
             storys: "Stories",
             nom:"Aisha - may God be pleased with her - and grapes",
             p1:"A poor person came to Aisha - may God be pleased with her - and asked her for alms. Mrs. Aisha searched the house and found only one grape, so she gave it to him. One of them said: What is the use of this grape? She said: It contains many atoms because God says: (And I recited Surat Al-Zalzalah 7,8); Rather, the portion of a date is recorded by God Almighty with Him, and it is smaller than that of a single corn.",
@@ -96,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ur: {
             chz: 'زکات کیلکولیشن چیلنج',
             col:"زکات کیلکولیٹر",
-            about:"اس ایپلیکیشن کے تخلیق کار",
+            about:"کے بارے میں",
             storys: "کہانیاں",
             nom: "عائشہ - اللہ ان سے راضی ہو - اور انگور",
             p1: "ایک غریب شخص عائشہ - اللہ ان سے راضی ہو - کے پاس آیا اور ان سے صدقہ طلب کیا۔ عائشہ نے گھر میں تلاش کیا اور صرف ایک انگور پایا، تو انہوں نے اسے دے دیا۔ ایک شخص نے کہا: اس انگور کا کیا فائدہ؟ انہوں نے کہا: اس میں بہت سی ذرات ہیں کیونکہ اللہ فرماتا ہے: (اور میں نے سورۃ الزلزلہ 7،8 پڑھی۔)؛ بلکہ ایک کھجور کا حصہ اللہ تعالیٰ کے پاس لکھا جاتا ہے، اور یہ ایک اکیلے دانے سے بھی چھوٹا ہے۔",
@@ -114,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: {
             chz: 'Tantangan Perhitungan Zakat',
             col:"Kalkulator Zakat",
-            about:"Pencipta aplikasi ini",
+            about:"tentang",
             storys: "Cerita",
             nom: "Aisha - semoga Allah meridhoi dia - dan anggur",
             p1: "Seorang miskin datang kepada Aisha - semoga Allah meridhoi dia - dan meminta sedekah. Nyonya Aisha mencari di rumah dan hanya menemukan satu anggur, jadi dia memberikannya kepadanya. Salah seorang berkata: Apa gunanya anggur ini? Dia berkata: Di dalamnya terdapat banyak atom karena Allah berfirman: (Dan saya membaca Surat Al-Zalzalah 7,8); Bahkan, sepotong kurma dicatat oleh Allah Yang Mahakuasa di sisinya, dan itu lebih kecil dari satu butir. ",
