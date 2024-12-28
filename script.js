@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-     const translations = {
+       const translations = {
         ar: {
             chz: 'تحدي حساب الزكاة',
             story: "قصص",
-            about:"القائمون على هذا التطبيق",
+            about:"عَنْ",
             z: 'حاسبة الزكاة',
             totalWealthLabel: 'المال الذي حال عليه الحول (بالريال):',
             debtLabel: 'الدين (بالريال):',
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             chz: 'Zakat Calculation Challenge',
             story: "storys",
-            about:"The creators of this application",
+            about:"about",
             z: 'Zakat Calculator',
             totalWealthLabel: 'Money over which one year has passed (in Riyals):',
             debtLabel: 'Debt (in Riyals):',
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ur: {
             chz: 'زکات کیلکولیشن چیلنج',
             story: "کہانیاں",
-            about:"اس ایپلیکیشن کے تخلیق کار",
+            about:"کے بارے میں",
             z: 'زکات کیلکولیٹر',
             totalWealthLabel: 'وہ پیسہ جس پر ایک سال گزر چکا ہے (ریال میں):',
             debtLabel: 'قرض (ریال میں):',
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: {
             chz: 'Tantangan Perhitungan Zakat',
             story: "cerita",
-            about:"Pencipta aplikasi ini",
+            about:"tentang",
             z: 'Kalkulator Zakat',
             totalWealthLabel: 'Uang yang telah genap setahun (dalam Riyal):',
             debtLabel: 'Hutang (dalam Riyal):',
