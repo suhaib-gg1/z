@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-      const translations = {
+       const translations = {
         ar: {
             story: "قصص",
             col:"حاسبة الزكاة",
-            about:"القائمون على هذا التطبيق",
+            about:"عَنْ",
             chz: 'تحدي حساب الزكاة',
             checkAnswer: 'تحقق الإجابة',
             changeNumber: 'تغيير الرقم',
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             story: "storys",
             col:"Zakat Calculator",
-            about:"The creators of this application",
+            about:"about",
             chz: 'Zakat Calculation Challenge',
             checkAnswer: 'Check Answer',
             changeNumber: 'Change Number',
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ur: {
             story: "کہانیاں",
             col:"زکات کیلکولیٹر",
-            about:"اس ایپلیکیشن کے تخلیق کار",
+            about:"کے بارے میں",
             chz: 'زکات کیلکولیشن چیلنج',
             checkAnswer: 'جواب چیک کریں',
             changeNumber: 'نیا نمبر تبدیل کریں',
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         id: {
             story: "cerita",
             col:"Kalkulator Zakat",
-            about:"Pencipta aplikasi ini",
+            about:"tentang",
             chz: 'Tantangan Perhitungan Zakat',
             checkAnswer: 'Periksa Jawaban',
             changeNumber: 'Ganti Angka',
