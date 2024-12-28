@@ -47,17 +47,30 @@ body {
     transition: background-color 0.3s, color 0.3s; /* انتقال سلس للألوان */
 }
 
+/* الوضع العادي */
 .navbar {
-    position: fixed;  /* تثبيت الـ navbar في أعلى الصفحة */
-    top: 0;           /* وضعه في أعلى الصفحة */
-    left: 0;          /* محاذاته من الجهة اليسرى */
-    width: 100%;      /* العرض الكامل للـ navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    align-items: center; /* محاذاة العناصر داخل الـ navbar */
-    background-color: var(--navbar-background);
-    padding: 10px 20px; /* حشوة داخلية للـ navbar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* إضافة تأثير ظل للـ navbar */
-    z-index: 1000;    /* لضمان بقاء الـ navbar فوق باقي العناصر */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    background: linear-gradient(to left, #cacaca, #f4f4f4); /* تدرج من اليسار إلى اليمين */
+    background-size: 200% 100%; /* تعيين حجم التدرج */
+    background-position: right bottom; /* وضع التدرج من اليمين */
+    transition: background-position 0.6s ease; /* تأثير الانتقال عند التبديل */
+
+}
+
+/* الوضع الليلي */
+body.dark-mode .navbar {
+    background: linear-gradient(to left, #222, #333); /* تدرج من اليسار إلى اليمين في الوضع الليلي */
+    background-size: 200% 100%; /* تعيين حجم التدرج */
+    background-position: left bottom; /* وضع التدرج من اليسار */
+    transition: background-position 0.6s ease; /* تأثير الانتقال عند التبديل */
 }
 
 .logo {
@@ -252,10 +265,24 @@ select:focus {
     border: solid rgba(0, 0, 0, 0.712);
     border-radius: 7px;
     appearance: none; /* إزالة التصميم الافتراضي */
+    background-image:url(moon.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
     background-color: var(--button-background);
     color: #000000;
     display: inline-block;
     font-size: 18px;
+}
+
+/* الحالة عند تفعيل الوضع الليلي */
+body.dark-mode #toggle-dark-mode {
+    background-image:url(son.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
 }
 
 /* إضافة تأثير الأنيميشن لجميع العناصر التي تحمل الفئة fade-in */
@@ -287,3 +314,4 @@ select:focus {
     opacity: 0;
     animation: fadeInUp .7s forwards;
 }
+
