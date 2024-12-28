@@ -62,12 +62,12 @@ setupToggle('toggleButton3', 'content3');
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-      const translations = {
+        const translations = {
         ar: {
             story: "قصص",
             col: "حاسبة الزكاة",
             chz: 'تحدي حساب الزكاة',
-            t: "القائمون على هذا التطبيق",
+            t: "القائمون على هذا المشروع",
             nom1: "💻الموقع والتطبيق💻",
             nom2: "📝الشرح داخل الفصل📝",
             nom3: "📊العروض التقديمية📊",
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Stories",
             col: "Zakat Calculator",
             chz: 'Zakat Calculation Challenge',
-            t: "The creators of this application",
+            t: "Those responsible for this project",
             nom1: "💻Website and App💻",
             nom2: "📝Explanation Inside the Class📝",
             nom3: "📊Presentations📊",
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "کہانیاں",
             col: "زکات کیلکولیٹر",
             chz: 'زکات کیلکولیشن چیلنج',
-            t: "اس ایپلیکیشن کے تخلیق کار",
+            t: "اس منصوبے کے ذمہ دار",
             nom1: "💻ویب سائٹ اور ایپ💻",
             nom2: "📝کلاس میں وضاحت📝",
             nom3: "📊پریزنٹیشنز📊",
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "Cerita",
             col: "Kalkulator Zakat",
             chz: 'Tantangan Perhitungan Zakat',
-            t: "Pencipta aplikasi ini",
+            t: "Mereka yang bertanggung jawab atas proyek ini",
             nom1: "💻Situs web dan Aplikasi💻",
             nom2: "📝Penjelasan di Kelas📝",
             nom3: "📊Presentasi📊",
