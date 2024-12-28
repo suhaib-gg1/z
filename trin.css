@@ -215,16 +215,29 @@ select:focus {
     transition: transform 0.3s; /* تأثير عند التغيير */
 }
 #toggle-dark-mode{
-position:relative;
-border: solid rgba(0, 0, 0, 0.712);
-border-radius: 7px;
-appearance: none; /* إزالة التصميم الافتراضي */
-background-color: var(--button-background);
-color: #000000;
-display: inline-block;
-font-size: 18px;
+    position:relative;
+    border: solid rgba(0, 0, 0, 0.712);
+    border-radius: 7px;
+    appearance: none; /* إزالة التصميم الافتراضي */
+    background-image:url(moon.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+    background-color: var(--button-background);
+    color: #000000;
+    display: inline-block;
+    font-size: 18px;
 }
 
+/* الحالة عند تفعيل الوضع الليلي */
+body.dark-mode #toggle-dark-mode {
+    background-image:url(son.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+}
 
 /* إضافة التصميم الجديد */
 
@@ -329,9 +342,8 @@ input[type="number"]:focus {
 
 /* إضافة تأثير لتغيير لون النقاط */
 #scoreDisplay.green {
- color: rgb(94, 255, 0);
+    color: rgb(94, 255, 0);
 }
-
 /* إضافة تأثير الأنيميشن لجميع العناصر التي تحمل الفئة fade-in */
 .fade-in {
     opacity: 0; /* بدء العنصر بشفافية 0 (غير مرئي) */
