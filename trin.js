@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-       const translations = {
+    const translations = {
         ar: {
+            history:"السجل",
             story: "قصص",
             col:"حاسبة الزكاة",
             about:"عَنْ",
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             no:'الإجابة غير صحيحة. الإجابة الصحيحة هي',
         },
         en: {
+            history:"history",
             story: "storys",
             col:"Zakat Calculator",
             about:"about",
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             changeNumber: 'Change Number',
         },
         ur: {
+            history:"تاریخ",
             story: "کہانیاں",
             col:"زکات کیلکولیٹر",
             about:"کے بارے میں",
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             changeNumber: 'نیا نمبر تبدیل کریں',
         },
         id: {
+            history:"sejarah",
             story: "cerita",
             col:"Kalkulator Zakat",
             about:"tentang",
@@ -66,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('checkAnswer').textContent = translations[lang].checkAnswer;
         document.getElementById('changeNumber').textContent = translations[lang].changeNumber;
         document.getElementById('about').textContent = translations[lang].about;
+        document.getElementById('history').textContent = translations[lang].history;
 
         
     };
