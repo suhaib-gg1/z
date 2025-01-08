@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // الترجمة
     const translations = { 
         ar:{
+            history:"السجل",
             chz: 'تحدي حساب الزكاة',
             col:"حاسبة الزكاة",
             about:"عَنْ",
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p5:"ذكر نبي الله إدريس عليه السلام أنه أول من كتب بالقلم, وأول من لبس الثياب, وقد ذكره نبينا محمد عليه الصلاة والسلام بأنه رآه في السماء الرابعة, وقد وصفه الله عز وجل في كتابه الكريم بأنه من الصابرين "
         },
         en: {
+            history:"history",
             chz: 'Zakat Calculation Challenge',
             col:"Zakat Calculator",
             about:"about",
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     },
         ur: {
+            history:"تاریخ",
             chz: 'زکات کیلکولیشن چیلنج',
             col:"زکات کیلکولیٹر",
             about:"کے بارے میں",
@@ -112,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         
         id: {
+            history:"sejarah",
             chz: 'Tantangan Perhitungan Zakat',
             col:"Kalkulator Zakat",
             about:"tentang",
@@ -164,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('p5').textContent = translations[lang].p5;
          document.getElementById('chz').textContent = translations[lang].chz;
          document.getElementById('about').textContent = translations[lang].about;
+         document.getElementById('history').textContent = translations[lang].history;
 
 
      };
