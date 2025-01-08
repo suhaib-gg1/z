@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-       const translations = {
+    const translations = {
         ar: {
+            history:"السجل",
             chz: 'تحدي حساب الزكاة',
             story: "قصص",
             about:"عَنْ",
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ريال'
         },
         en: {
+            history:"history",
             chz: 'Zakat Calculation Challenge',
             story: "storys",
             about:"about",
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'SR'
         },
         ur: {
+            history:"تاریخ",
             chz: 'زکات کیلکولیشن چیلنج',
             story: "کہانیاں",
             about:"کے بارے میں",
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ریال'
         },
         id: {
+            history:"sejarah",
             chz: 'Tantangan Perhitungan Zakat',
             story: "cerita",
             about:"tentang",
@@ -82,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('debt-label').textContent = translations[lang].debtLabel;
         document.getElementById('calculate-button').textContent = translations[lang].calculateButton;
         document.getElementById('about').textContent = translations[lang].about;
+        document.getElementById('history').textContent = translations[lang].history;
 
     };
 
@@ -93,32 +98,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
-
-
-
-
-
-    // Handle form submission
-    document.getElementById('zakah-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        // الحصول على القيم من النموذج
-        const totalWealth = parseFloat(document.getElementById('total-wealth').value);
-        const debt = parseFloat(document.getElementById('debt').value);
-
-        // حساب الزكاة
-        const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
-
-        // عرض النتيجة
-        const selectedLang = langSelect.value;
-        const resultText = translations[selectedLang].resultText;
-        document.getElementById('result').textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
-    });
-
-
-
     updateText(savedLang);
 
+
+
+
+
+  // التعامل مع حساب الزكاة
+  document.getElementById('zakah-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // الحصول على القيم من النموذج
+    const totalWealth = parseFloat(document.getElementById('total-wealth').value);
+    const debt = parseFloat(document.getElementById('debt').value);
+
+    // حساب الزكاة
+    const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
+
+    // عرض النتيجة للمستخدم
+    const selectedLang = langSelect.value;
+    const resultText = translations[selectedLang].resultText;
+    document.getElementById('result').textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
+
+    // إضافة العملية إلى السجل في localStorage
+    const date = new Date().toLocaleString();
+    const zakahRecord = {
+        date: date,
+        totalWealth: totalWealth,
+        debt: debt,
+        zakahAmount: zakahAmount.toFixed(2)
+    };
+
+    // استرجاع السجل المخزن من localStorage وإضافة السجل الجديد
+    const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
+    history.push(zakahRecord);
+    localStorage.setItem('zakahHistory', JSON.stringify(history));
+});
 });
 
 
@@ -145,3 +160,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
