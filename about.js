@@ -62,8 +62,9 @@ setupToggle('toggleButton3', 'content3');
 
 document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
-        const translations = {
+    const translations = {
         ar: {
+            history:"السجل",
             story: "قصص",
             col: "حاسبة الزكاة",
             chz: 'تحدي حساب الزكاة',
@@ -78,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "وديع ابويوسف",
         },
         en: {
+            history:"history",
             story: "Stories",
             col: "Zakat Calculator",
             chz: 'Zakat Calculation Challenge',
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "Wadi' Abu Yusuf",
         },
         ur: {
+            history:"تاریخ",
             story: "کہانیاں",
             col: "زکات کیلکولیٹر",
             chz: 'زکات کیلکولیشن چیلنج',
@@ -106,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "وديع ابو يوسف",
         },
         id: {
+            history:"sejarah",
+
             story: "Cerita",
             col: "Kalkulator Zakat",
             chz: 'Tantangan Perhitungan Zakat',
@@ -120,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "Wadi' Abu Yusuf",
         }
     };
-    
     
     const langSelect = document.getElementById('lang');
 
@@ -140,6 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('name2').textContent = translations[lang].name2;
          document.getElementById('name3').textContent = translations[lang].name3;
          document.getElementById('p3').textContent = translations[lang].p3;
+         document.getElementById('history').textContent = translations[lang].history;
+
+
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
