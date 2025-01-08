@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زكاتي</title>
+    <link rel="stylesheet" href="history.css">
+    <link rel="icon" href="z.icon">
+</head>
+<body>
+    <div class="navbar">
+        <div class="b">
+            <div class="select-wrapper">
+                <select id="lang">
+                    <option value="ar">العربية</option>
+                    <option value="en">English</option>
+                    <option value="ur">اردو</option>
+                    <option value="id">Indonesia</option>
+                </select>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776; <!-- رمز همبرغر -->
+        </div>
+        <ul class="nav-links" id="nav-links" dir="rtl">
+            <li><a id="col" href="index.html">حاسبة الزكاة</a></li>
+            <li><a id="story" href="story-page.html">قصص</a></li>
+            <li><a id="chz" href="trin.html">تحدي حساب الزكاة</a></li>
+            <li><a id="about" href="about.html">عَنْ</a></li>
+
+            <button class="m" id="toggle-dark-mode" title="تبديل الوضع">🌚</button>
+            
+        </ul>
+        <div class="img"  style="right: 110px;">
+            <img src="snapedit_1730146554309.png" width="120"  alt="Logo" >
+        </div>
+    </div>
+    <div class="container" dir="auto">
+    <header>
+        <h1 id="a">سجل العمليات الحسابية</h1>
+    </header>
+    <main>
+    <!-- جدول السجلات -->
+<table id="history-table" border="1" dir="rtl">
+    <thead>
+        <tr>
+            <th id="t">التاريخ</th>
+            <th id="m">المال (ريال)</th>
+            <th id="d">الدين (ريال)</th>
+            <th id="km">الزكاة المستحقة (ريال)</th>
+        </tr>
+    </thead>
+    <tbody id="history-body">
+        <!-- سيتم ملء هذا القسم بالسجلات من خلال JavaScript -->
+    </tbody>
+</table>
+        
+    </main></div>
+    <script src="history.js"></script>
+</body>
+</html>
