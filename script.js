@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
@@ -31,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calculateButton: 'احسب الزكاة',
             warning: 'تحذير : الحاسبة تم صنعها لغرض تعليمي لا أكثر لذلك قد تكون هناك بعض الأخطاء',
             resultText: 'الزكاة المستحقة هي:',
+            noZakahMessage: 'لا يوجد زكاة مستحقة بناءً على القيم المدخلة.',
             a: 'ريال'
         },
         en: {
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calculateButton: 'Calculate Zakat',
             warning: 'Warning: This calculator is made for educational purposes only, so there may be some errors.',
             resultText: 'The zakat due is:',
+            noZakahMessage: 'No zakat due based on the entered values.',
             a: 'SR'
         },
         ur: {
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             calculateButton: 'زکات کا حساب کریں',
             warning: 'خبردار: یہ کیلکولیٹر صرف تعلیمی مقاصد کے لئے بنایا گیا ہے، اس میں کچھ غلطیاں ہو سکتی ہیں۔',
             resultText: 'زکات کی مقدار ہے:',
+            noZakahMessage: 'دی گئی قیمتوں کی بنیاد پر کوئی زکات مستحق نہیں ہے۔',
             a: 'ریال'
         },
         id: {
@@ -70,12 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
             calculateButton: 'Hitung Zakat',
             warning: 'Peringatan: Kalkulator ini dibuat untuk tujuan pendidikan saja, jadi mungkin ada beberapa kesalahan.',
             resultText: 'Zakat yang harus dibayar adalah:',
+            noZakahMessage: 'Tidak ada zakat yang harus dibayar berdasarkan nilai yang dimasukkan.',
             a: 'SR'
         }
     };
+
     const langSelect = document.getElementById('lang');
 
-   // استرجاع اللغة المخزنة من localStorage
+    // استرجاع اللغة المخزنة من localStorage
     const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
     langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
     const updateText = (lang) => {
@@ -87,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('calculate-button').textContent = translations[lang].calculateButton;
         document.getElementById('about').textContent = translations[lang].about;
         document.getElementById('history').textContent = translations[lang].history;
-
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
@@ -100,44 +103,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
     updateText(savedLang);
 
-
-
-
-
-  // التعامل مع حساب الزكاة
-  document.getElementById('zakah-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // الحصول على القيم من النموذج
-    const totalWealth = parseFloat(document.getElementById('total-wealth').value);
-    const debt = parseFloat(document.getElementById('debt').value);
-
-    // حساب الزكاة
-    const zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
-
-    // عرض النتيجة للمستخدم
-    const selectedLang = langSelect.value;
-    const resultText = translations[selectedLang].resultText;
-    document.getElementById('result').textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
-
-    // إضافة العملية إلى السجل في localStorage
-    const date = new Date().toLocaleString();
-    const zakahRecord = {
-        date: date,
-        totalWealth: totalWealth,
-        debt: debt,
-        zakahAmount: zakahAmount.toFixed(2)
-    };
-
-    // استرجاع السجل المخزن من localStorage وإضافة السجل الجديد
-    const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
-    history.push(zakahRecord);
-    localStorage.setItem('zakahHistory', JSON.stringify(history));
-});
-});
-
-
-
+    document.getElementById('zakah-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+    
+        // الحصول على القيم من النموذج
+        const totalWealth = parseFloat(document.getElementById('total-wealth').value);
+        const debt = parseFloat(document.getElementById('debt').value);
+    
+        // حساب الزكاة
+        let zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
+    
+        // التأكد من أن قيمة الزكاة لا تكون سلبية
+        if (zakahAmount < 0) {
+            zakahAmount = 0;
+        }
+    
+        // عرض النتيجة للمستخدم
+        const selectedLang = langSelect.value;
+        const resultText = translations[selectedLang].resultText;
+        const noZakahMessage = translations[selectedLang].noZakahMessage;
+    
+        const resultElement = document.getElementById('result');
+    
+        // إظهار رسالة مختلفة إذا كانت الزكاة 0
+        if (zakahAmount === 0) {
+            resultElement.textContent = noZakahMessage;
+            resultElement.style.color = 'red';  // لون أحمر عند عدم وجود زكاة
+        } else {
+            resultElement.textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
+            resultElement.style.color = '#00aa09';  // لون أخضر عندما تكون الزكاة أكبر من 0
+        }
+    
+        // إذا كانت الزكاة 0 أو أقل، لا تتم إضافة السجل
+        if (zakahAmount <= 0) {
+            console.log("الزكاة تساوي 0 أو أقل. لن تتم إضافة السجل.");
+            return; // الخروج من الدالة بدون إضافة السجل
+        }
+    
+        // الحصول على السجل المخزن من localStorage
+        const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
+    
+        // التحقق من آخر سجل فقط (إن وجد)
+        const lastEntry = history[history.length - 1];
+    
+        // التحقق إذا كانت القيم الحالية هي نفسها القيم في آخر سجل
+        if (lastEntry && lastEntry.totalWealth === totalWealth && lastEntry.debt === debt && lastEntry.zakahAmount === zakahAmount.toFixed(2)) {
+            console.log("القيم هي نفسها القيم الأخيرة. لن تتم إضافة السجل.");
+        } else {
+            // إذا كانت القيم مختلفة، إضافة السجل الجديد
+            const date = new Date().toLocaleString();
+            const zakahRecord = {
+                date: date,
+                totalWealth: totalWealth,
+                debt: debt,
+                zakahAmount: zakahAmount.toFixed(2)
+            };
+    
+            // إضافة السجل إلى السجل الحالي في localStorage
+            history.push(zakahRecord);
+            localStorage.setItem('zakahHistory', JSON.stringify(history));
+            console.log("تم إضافة السجل الجديد.");
+        }
+    });
+    
+    })
+    
 
 document.addEventListener('DOMContentLoaded', () => {
     // استرجاع الوضع المخزن
@@ -160,4 +190,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
