@@ -139,7 +139,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    width: auto;
     margin: 75px auto;
     padding: 20px;
     background: var(--container-background);
