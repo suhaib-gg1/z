@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             d: "الدين (بالريال)",
             km: "الزكاة المستحقة (بالريال)",
             a: "السجل",
-            del: "حذف السجل",  // الترجمة بالعربية
             nom: "ترتيب العمليات", // الترجمة بالعربية
         },
         en: {
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
             d: "debt (in Riyals)",
             km: "due zakat (in Riyals)",
             a: "history", // تم استبدال "record" بـ "history"
-            del: "Delete Record", // الترجمة بالإنجليزية
             nom: "Sort Operations", // الترجمة بالإنجليزية
         },
         ur: {
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             d: "قرض (ریال میں)",
             km: "مستحق زکات (ریال میں)",
             a: "تاریخ", // تم استبدال "ریکارڈ" بـ "تاریخ"
-            del: "ریکارڈ حذف کریں", // الترجمة بالأردية
             nom: "عملیات کو ترتیب دیں", // الترجمة بالأردية
         },
         id: {
@@ -49,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             d: "hutang (dalam Riyal)",
             km: "zakat yang harus dibayar (dalam Riyal)",
             a: "sejarah", // تم استبدال "catatan" بـ "sejarah" (التاريخ)
-            del: "Hapus Rekaman", // الترجمة الإندونيسية
             nom: "Urutkan Operasi", // الترجمة الإندونيسية
         }
     };
@@ -71,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('m').textContent = translations[lang].m;
         document.getElementById('d').textContent = translations[lang].d;
         document.getElementById('km').textContent = translations[lang].km;
-        document.getElementById('del').textContent = translations[lang].del;
         document.getElementById('a').textContent = translations[lang].a; // إضافة الترجمة للتاريخ
         document.getElementById('nom').textContent = translations[lang].nom; // إضافة الترجمة للتاريخ
     };
@@ -143,18 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${entry.totalWealth}</td>
                 <td>${entry.debt}</td>
                 <td>${entry.zakahAmount}</td>
-                <td><button class="delete-btn" data-index="${index}">🗑️</button></td>
             `;
         });
 
-        // إضافة مستمع الحدث لأزرار الحذف
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const index = event.target.getAttribute('data-index');
-                deleteHistoryEntry(index);
-            });
-        });
+     
     }
 
     // وظيفة لحذف السجل من التاريخ
