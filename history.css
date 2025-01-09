@@ -428,53 +428,30 @@ body.dark-mode button:hover {
 }
 /* استخدام media queries للتحكم في التخطيط على الشاشات الصغيرة */
 @media (max-width: 768px) {
-    body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden; /* منع التمرير الأفقي */
-    }
-
     .container {
-        width: 100%; /* جعل الحاوية تأخذ العرض الكامل */
         padding: 15px;
     }
 
     button {
         font-size: 0.9rem;
-        width: 100%; /* جعل الأزرار تستغل العرض الكامل */
-        padding: 12px;
     }
 
     form {
         gap: 10px;
-        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden; /* منع التمرير الأفقي */
-    }
-
     .container {
-        width: 100%;
         padding: 10px;
     }
 
     button {
         font-size: 0.8rem;
-        width: 100%; /* جعل الأزرار تستغل العرض الكامل */
-        padding: 15px;
     }
 
     /* تصميم أكثر اتساعاً للأزرار في الشاشات الصغيرة جداً */
     button {
-        padding: 15px;
+        padding: 12px;
     }
 }
