@@ -406,12 +406,12 @@ body.dark-mode td {
 
 /* تنسيق الأزرار في الوضع الداكن */
 body.dark-mode button {
-    background-color: #5bc0de;
+    background-color: #d30000;
     color: #fff;
 }
 
 body.dark-mode button:hover {
-    background-color: #31b0d5;
+    background-color: #00000075;
 }
 .delete-btn {
     background-color: #ff4d4d; /* اللون الأساسي للزر */
