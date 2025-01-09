@@ -413,3 +413,16 @@ body.dark-mode button {
 body.dark-mode button:hover {
     background-color: #31b0d5;
 }
+.delete-btn {
+    background-color: #ff4d4d; /* اللون الأساسي للزر */
+    color: white; /* لون النص داخل الزر */
+    border: none; /* إزالة الحدود */
+    padding: 10px 20px; /* المسافة الداخلية للزر */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور على الزر */
+    border-radius: 5px; /* إضافة حواف دائرية */
+    font-size: 14px; /* تغيير حجم النص */
+}
+
+.delete-btn:hover {
+    background-color: #ff0000; /* اللون عند التمرير على الزر */
+}
