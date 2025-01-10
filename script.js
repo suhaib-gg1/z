@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // نصوص الترجمة لكل لغة
     const translations = {
         ar: {
-            history:"السجل",
+            history: "السجل",
             chz: 'تحدي حساب الزكاة',
             story: "قصص",
-            about:"عَنْ",
+            about: "عَنْ",
             z: 'حاسبة الزكاة',
             totalWealthLabel: 'المال الذي حال عليه الحول (بالريال):',
             debtLabel: 'الدين (بالريال):',
@@ -31,13 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             warning: 'تحذير : الحاسبة تم صنعها لغرض تعليمي لا أكثر لذلك قد تكون هناك بعض الأخطاء',
             resultText: 'الزكاة المستحقة هي:',
             noZakahMessage: 'لا يوجد زكاة مستحقة بناءً على القيم المدخلة.',
-            a: 'ريال'
+            a: 'ريال',
+            cb: "اختيار خلفية",
+            rb: "إعادة الخلفية الافتراضية",
         },
         en: {
-            history:"history",
+            history: "history",
             chz: 'Zakat Calculation Challenge',
-            story: "storys",
-            about:"about",
+            story: "stories",
+            about: "about",
             z: 'Zakat Calculator',
             totalWealthLabel: 'Money over which one year has passed (in Riyals):',
             debtLabel: 'Debt (in Riyals):',
@@ -45,13 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
             warning: 'Warning: This calculator is made for educational purposes only, so there may be some errors.',
             resultText: 'The zakat due is:',
             noZakahMessage: 'No zakat due based on the entered values.',
-            a: 'SR'
+            a: 'SR',
+            cb: "Choose Background",
+            rb: "Reset Default Background",
         },
         ur: {
-            history:"تاریخ",
+            history: "تاریخ",
             chz: 'زکات کیلکولیشن چیلنج',
             story: "کہانیاں",
-            about:"کے بارے میں",
+            about: "کے بارے میں",
             z: 'زکات کیلکولیٹر',
             totalWealthLabel: 'وہ پیسہ جس پر ایک سال گزر چکا ہے (ریال میں):',
             debtLabel: 'قرض (ریال میں):',
@@ -59,13 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
             warning: 'خبردار: یہ کیلکولیٹر صرف تعلیمی مقاصد کے لئے بنایا گیا ہے، اس میں کچھ غلطیاں ہو سکتی ہیں۔',
             resultText: 'زکات کی مقدار ہے:',
             noZakahMessage: 'دی گئی قیمتوں کی بنیاد پر کوئی زکات مستحق نہیں ہے۔',
-            a: 'ریال'
+            a: 'ریال',
+            cb: "پس منظر منتخب کریں",
+            rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
         },
         id: {
-            history:"sejarah",
+            history: "sejarah",
             chz: 'Tantangan Perhitungan Zakat',
             story: "cerita",
-            about:"tentang",
+            about: "tentang",
             z: 'Kalkulator Zakat',
             totalWealthLabel: 'Uang yang telah genap setahun (dalam Riyal):',
             debtLabel: 'Hutang (dalam Riyal):',
@@ -73,9 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
             warning: 'Peringatan: Kalkulator ini dibuat untuk tujuan pendidikan saja, jadi mungkin ada beberapa kesalahan.',
             resultText: 'Zakat yang harus dibayar adalah:',
             noZakahMessage: 'Tidak ada zakat yang harus dibayar berdasarkan nilai yang dimasukkan.',
-            a: 'SR'
+            a: 'SR',
+            cb: "Pilih Latar Belakang",
+            rb: "Setel Ulang Latar Belakang Default",
         }
     };
+    
 
     const langSelect = document.getElementById('lang');
 
@@ -91,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('calculate-button').textContent = translations[lang].calculateButton;
         document.getElementById('about').textContent = translations[lang].about;
         document.getElementById('history').textContent = translations[lang].history;
+        document.getElementById('cb').textContent = translations[lang].cb;
+        document.getElementById('rb').textContent = translations[lang].rb;
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
@@ -192,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
      // الدالة لاختيار صورة كخلفية
-     document.getElementById('change-background').addEventListener('click', function() {
+     document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -218,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // دالة لإعادة الخلفية الافتراضية
-    document.getElementById('reset-background').addEventListener('click', function() {
+    document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
         document.body.style.backgroundImage = '';  // إزالة الخلفية
     });
