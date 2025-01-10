@@ -260,20 +260,23 @@ select:focus {
     font-size: 18px; /* حجم السهم */
     transition: transform 0.3s; /* تأثير عند التغيير */
 }
-#toggle-dark-mode{
-    position:relative;
+#toggle-dark-mode {
+    position: relative;
     border: solid rgba(0, 0, 0, 0.712);
     border-radius: 7px;
     appearance: none; /* إزالة التصميم الافتراضي */
-    background-image:url(moon.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
-    background-size: cover; /* تغطية الخلفية بشكل كامل */
-    background-repeat: no-repeat; /* عدم تكرار الخلفية */
-    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
-    background-position: center; /* تحديد مكان الخلفية في المنتصف */
-    background-color: var(--button-background);
-    color: #000000;
+    background-image: url('moon.jpg'); /* الصورة في الوضع النهاري */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 100% center; /* تحديد مكان الخلفية في المنتصف */
+    background-color: var(--button-background, #fff);
+    color: #000;
     display: inline-block;
     font-size: 18px;
+    padding: 2px 15px;
+    cursor: pointer;
+    overflow: hidden; /* إخفاء أي شيء يخرج من الزر */
 }
 
 /* الحالة عند تفعيل الوضع الليلي */
@@ -315,3 +318,24 @@ body.dark-mode #toggle-dark-mode {
     animation: fadeInUp .7s forwards;
 }
 
+
+.menu-button {
+    background-color: var(--button-background);
+    border: solid rgb(28, 28, 28);
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 0px;
+    width: 100%;
+    justify-content: center;
+    gap: 4px;
+}
+
+.menu-button:hover {
+    background-color: var(--button-hover);
+}
+/* إخفاء مدخل اختيار الملف */
+#file-input {
+    display: none ;
+}
