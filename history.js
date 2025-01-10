@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             a: "السجل",
             del: "حذف السجل",  // الترجمة بالعربية
             nom: "ترتيب العمليات", // الترجمة بالعربية
+            cb: "اختيار خلفية",
+            rb: "إعادة الخلفية الافتراضية",
         },
         en: {
             col: "Zakat Calculator",
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             a: "history", // تم استبدال "record" بـ "history"
             del: "Delete Record", // الترجمة بالإنجليزية
             nom: "Sort Operations", // الترجمة بالإنجليزية
+            cb: "Choose Background",
+            rb: "Reset Default Background",
         },
         ur: {
             col: "زکات کیلکولیٹر",
@@ -39,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             a: "تاریخ", // تم استبدال "ریکارڈ" بـ "تاریخ"
             del: "ریکارڈ حذف کریں", // الترجمة بالأردية
             nom: "عملیات کو ترتیب دیں", // الترجمة بالأردية
+            cb: "پس منظر منتخب کریں",
+            rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
         },
         id: {
             chz: 'Tantangan Perhitungan Zakat',
@@ -51,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
             a: "sejarah", // تم استبدال "catatan" بـ "sejarah" (التاريخ)
             del: "Hapus Rekaman", // الترجمة الإندونيسية
             nom: "Urutkan Operasi", // الترجمة الإندونيسية
+            cb: "Pilih Latar Belakang",
+            rb: "Setel Ulang Latar Belakang Default",
         }
     };
     
@@ -73,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('del').textContent = translations[lang].del;
         document.getElementById('a').textContent = translations[lang].a; // إضافة الترجمة للتاريخ
         document.getElementById('nom').textContent = translations[lang].nom; // إضافة الترجمة للتاريخ
+        document.getElementById('cb').textContent = translations[lang].cb;
+        document.getElementById('rb').textContent = translations[lang].rb;
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
@@ -171,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // عرض السجل عند تحميل الصفحة
     displayHistory();
 });
-     // الدالة لاختيار صورة كخلفية
-     document.getElementById('change-background').addEventListener('click', function() {
+    // الدالة لاختيار صورة كخلفية
+    document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -198,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // دالة لإعادة الخلفية الافتراضية
-    document.getElementById('reset-background').addEventListener('click', function() {
+    document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
         document.body.style.backgroundImage = '';  // إزالة الخلفية
     });
