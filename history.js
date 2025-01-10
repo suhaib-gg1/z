@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    
 
     const langSelect = document.getElementById('lang');
 
@@ -172,3 +171,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // عرض السجل عند تحميل الصفحة
     displayHistory();
 });
+     // الدالة لاختيار صورة كخلفية
+     document.getElementById('change-background').addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        
+        input.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function() {
+                    // حفظ الصورة في localStorage
+                    localStorage.setItem('background-image', reader.result);
+                    document.body.style.backgroundImage = `url(${reader.result})`;
+                    document.body.style.backgroundSize = 'cover';  // لجعل الصورة تغطي الشاشة بالكامل
+                    document.body.style.backgroundAttachment = 'fixed';  // لجعل الخلفية ثابتة أثناء التمرير
+                };
+                
+                reader.readAsDataURL(file);  // تحويل الصورة إلى قاعدة بيانات URL لتمكين استخدامها كخلفية
+            }
+        });
+        
+        input.click();  // فتح نافذة اختيار الملفات
+    });
+
+    // دالة لإعادة الخلفية الافتراضية
+    document.getElementById('reset-background').addEventListener('click', function() {
+        localStorage.removeItem('background-image');
+        document.body.style.backgroundImage = '';  // إزالة الخلفية
+    });
+
+    // عند تحميل الصفحة، يتم تطبيق الخلفية المخزنة إذا كانت موجودة
+    window.addEventListener('load', function() {
+        const savedBackground = localStorage.getItem('background-image');
+        if (savedBackground) {
+            document.body.style.backgroundImage = `url(${savedBackground})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundAttachment = 'fixed';
+        }
+    });
