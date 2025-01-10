@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "صهيب بوزيدان",
             name1: "1- صهيب بوزيدان",
             name2: "2-عبدالرحمن خطيري",
-            name3: "3-خالد القحطاني",
             p3: "وديع ابويوسف",
         },
         en: {
@@ -90,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
-            name3: "3- Khalid Al-Qahtani",
             p3: "Wadi' Abu Yusuf",
         },
         ur: {
@@ -105,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "صہیب بوزیدان",
             name1: "1- صہیب بوزیدان",
             name2: "2- عبدالرحمن خطیری",
-            name3: "3- خالد القحطانی",
             p3: "وديع ابو يوسف",
         },
         id: {
@@ -121,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
-            name3: "3- Khalid Al-Qahtani",
             p3: "Wadi' Abu Yusuf",
         }
     };
@@ -142,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('t').textContent = translations[lang].t;
          document.getElementById('name1').textContent = translations[lang].name1;
          document.getElementById('name2').textContent = translations[lang].name2;
-         document.getElementById('name3').textContent = translations[lang].name3;
          document.getElementById('p3').textContent = translations[lang].p3;
          document.getElementById('history').textContent = translations[lang].history;
 
@@ -159,3 +154,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
     updateText(savedLang);
 })
+     // الدالة لاختيار صورة كخلفية
+     document.getElementById('change-background').addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*';
+        
+        input.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function() {
+                    // حفظ الصورة في localStorage
+                    localStorage.setItem('background-image', reader.result);
+                    document.body.style.backgroundImage = `url(${reader.result})`;
+                    document.body.style.backgroundSize = 'cover';  // لجعل الصورة تغطي الشاشة بالكامل
+                    document.body.style.backgroundAttachment = 'fixed';  // لجعل الخلفية ثابتة أثناء التمرير
+                };
+                
+                reader.readAsDataURL(file);  // تحويل الصورة إلى قاعدة بيانات URL لتمكين استخدامها كخلفية
+            }
+        });
+        
+        input.click();  // فتح نافذة اختيار الملفات
+    });
+
+    // دالة لإعادة الخلفية الافتراضية
+    document.getElementById('reset-background').addEventListener('click', function() {
+        localStorage.removeItem('background-image');
+        document.body.style.backgroundImage = '';  // إزالة الخلفية
+    });
+
+    // عند تحميل الصفحة، يتم تطبيق الخلفية المخزنة إذا كانت موجودة
+    window.addEventListener('load', function() {
+        const savedBackground = localStorage.getItem('background-image');
+        if (savedBackground) {
+            document.body.style.backgroundImage = `url(${savedBackground})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundAttachment = 'fixed';
+        }
+    });
