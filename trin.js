@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             checkAnswer: 'تحقق الإجابة',
             changeNumber: 'تغيير الرقم',
             no:'الإجابة غير صحيحة. الإجابة الصحيحة هي',
+            cb: "اختيار خلفية",
+            rb: "إعادة الخلفية الافتراضية",
         },
         en: {
             history:"history",
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             chz: 'Zakat Calculation Challenge',
             checkAnswer: 'Check Answer',
             changeNumber: 'Change Number',
+            cb: "Choose Background",
+            rb: "Reset Default Background",
         },
         ur: {
             history:"تاریخ",
@@ -46,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
             chz: 'زکات کیلکولیشن چیلنج',
             checkAnswer: 'جواب چیک کریں',
             changeNumber: 'نیا نمبر تبدیل کریں',
+            cb: "پس منظر منتخب کریں",
+            rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
         },
         id: {
             history:"sejarah",
@@ -55,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             chz: 'Tantangan Perhitungan Zakat',
             checkAnswer: 'Periksa Jawaban',
             changeNumber: 'Ganti Angka',
+            cb: "Pilih Latar Belakang",
+            rb: "Setel Ulang Latar Belakang Default",
         }
     };
     const langSelect = document.getElementById('lang');
@@ -71,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('changeNumber').textContent = translations[lang].changeNumber;
         document.getElementById('about').textContent = translations[lang].about;
         document.getElementById('history').textContent = translations[lang].history;
-
+        document.getElementById('cb').textContent = translations[lang].cb;
+        document.getElementById('rb').textContent = translations[lang].rb;
         
     };
 
@@ -196,8 +205,8 @@ window.onload = updateRandomNumber;
 // عند تحميل الصفحة، نعرض النقاط المخزنة
 updateScore();
 
-     // الدالة لاختيار صورة كخلفية
-     document.getElementById('change-background').addEventListener('click', function() {
+      // الدالة لاختيار صورة كخلفية
+      document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -223,7 +232,7 @@ updateScore();
     });
 
     // دالة لإعادة الخلفية الافتراضية
-    document.getElementById('reset-background').addEventListener('click', function() {
+    document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
         document.body.style.backgroundImage = '';  // إزالة الخلفية
     });
