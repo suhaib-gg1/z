@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name1: "1- صهيب بوزيدان",
             name2: "2-عبدالرحمن خطيري",
             p3: "وديع ابويوسف",
+            cb: "اختيار خلفية",
+            rb: "إعادة الخلفية الافتراضية",
         },
         en: {
             history:"history",
@@ -90,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
             p3: "Wadi' Abu Yusuf",
+            cb: "Choose Background",
+            rb: "Reset Default Background",
         },
         ur: {
             history:"تاریخ",
@@ -104,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name1: "1- صہیب بوزیدان",
             name2: "2- عبدالرحمن خطیری",
             p3: "وديع ابو يوسف",
+            cb: "پس منظر منتخب کریں",
+            rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
         },
         id: {
             history:"sejarah",
@@ -119,6 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
             p3: "Wadi' Abu Yusuf",
+            cb: "Pilih Latar Belakang",
+            rb: "Setel Ulang Latar Belakang Default",
         }
     };
     
@@ -140,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('name2').textContent = translations[lang].name2;
          document.getElementById('p3').textContent = translations[lang].p3;
          document.getElementById('history').textContent = translations[lang].history;
-
+         document.getElementById('cb').textContent = translations[lang].cb;
+         document.getElementById('rb').textContent = translations[lang].rb;
 
     };
 
@@ -154,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
     updateText(savedLang);
 })
-     // الدالة لاختيار صورة كخلفية
-     document.getElementById('change-background').addEventListener('click', function() {
+    // الدالة لاختيار صورة كخلفية
+    document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -181,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // دالة لإعادة الخلفية الافتراضية
-    document.getElementById('reset-background').addEventListener('click', function() {
+    document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
         document.body.style.backgroundImage = '';  // إزالة الخلفية
     });
