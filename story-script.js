@@ -60,7 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nom4:"قصة لقمان الحكيم مع ابنه",
             p4:"عاش في قديم الزمان رجل اسمه لقمان، وقد كان رجلًا صالحًا ويمتاز بالحكمة والعلم، فعُرِف عنه الرأي الصائب حتى أصبح يُطلق عليه_لقمان الحكي_.  وفي يوم من الأيام جلس لقمان مع ابنه ليُعلّمه بعض الأمور في الحياة، فأعطاه نصائح ووصايا ستنفعه في دينه ودُنياه.  فقال لقمان لابنه الذي جلس يستمع إليه بحرص وانتباه: يا بني إنّ أهم أمر عليكِ أن تحرص عليه هو عبادة الله تعالى وحده، فمن يفعل غير ذلك سيظلم نفسه ظلمًا كبيرًا.  وأتبع لقمان وصاياه موضحًا له أنّ الله عالم بجميع الأمور الظاهر منها والمخفيّ: وحافظ يا بُني على الصلاة فهي أساس الدين، واحرص على دعوة الناس إلى الفضائل، وحذّرهم من اتباع الرذائل.  كما أوصاه بالصبر على المصائب والشدائد، فهذا له أجر كبير وعظيم عند الله تعالى.  ثم قال لقمان لابنه مُحذرًا: واحذر يا بني من أن تكون متكبرًا على الناس ومغرورًا، فهذا من أسوأ الصفات في الإنسان، والله تعالى لا يحب المتكبّرين، فعليكَ أن تكون متواضعًا مع الجميع مهما بلغت منزلتك.  واختتم لقمان وصاياه لابنه بإرشاده إلى ضرورة الاعتدال والتوسط في الأمور، وذلك حتّى في المشي فلا يمشي بسرعة زائدة ولا ببطء شديد، وأمره أيضًا بخفض صوته عند التحدّث، وهذا فيه احترام للآخرين.  ينبغي لنا جميعًا أن نتعلّم من وصايا لقمان لابنه ونُطبّقها في حياتنا.  إقرأ المزيد على حكاياتنا",
             nom5:"قصة عن سيدنا إدريس عليه السلام ",
-            p5:"ذكر نبي الله إدريس عليه السلام أنه أول من كتب بالقلم, وأول من لبس الثياب, وقد ذكره نبينا محمد عليه الصلاة والسلام بأنه رآه في السماء الرابعة, وقد وصفه الله عز وجل في كتابه الكريم بأنه من الصابرين "
+            p5:"ذكر نبي الله إدريس عليه السلام أنه أول من كتب بالقلم, وأول من لبس الثياب, وقد ذكره نبينا محمد عليه الصلاة والسلام بأنه رآه في السماء الرابعة, وقد وصفه الله عز وجل في كتابه الكريم بأنه من الصابرين ",
+            cb: "اختيار خلفية",
+            rb: "إعادة الخلفية الافتراضية",
         },
         en: {
             history:"history",
@@ -91,8 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         We should all learn from Luqman's advice to his son and apply it in our lives.`,
         nom5: "The story about our Prophet Idris (peace be upon him)",
-        p5: "It is mentioned that Prophet Idris (peace be upon him) was the first to write with a pen and the first to wear clothes. Our Prophet Muhammad (peace be upon him) mentioned that he saw Idris in the fourth heaven. Allah described him in the Qur'an as one of the patient and righteous "
-        
+        p5: "It is mentioned that Prophet Idris (peace be upon him) was the first to write with a pen and the first to wear clothes. Our Prophet Muhammad (peace be upon him) mentioned that he saw Idris in the fourth heaven. Allah described him in the Qur'an as one of the patient and righteous ",
+        cb: "Choose Background",
+        rb: "Reset Default Background",
     
     },
         ur: {
@@ -110,8 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nom4: "لقمان حکیم اور ان کے بیٹے کی کہانی",
             p4: "ایک زمانے میں ایک شخص تھا جس کا نام لقمان تھا۔ وہ ایک نیک شخص تھا جو اپنی حکمت اور علم کے لیے جانا جاتا تھا۔ اس کی صحیح رائے کی وجہ سے اسے 'لقمان حکیم' کہا جاتا تھا۔ ایک دن، لقمان اپنے بیٹے کے ساتھ بیٹھا تاکہ اسے زندگی کے کچھ امور سکھائے۔ اس نے اسے نصیحتیں اور ہدایات دیں جو اس کے دین اور دنیا میں فائدہ مند ہوں گی۔ پھر لقمان نے اپنے بیٹے سے کہا: میرے بیٹے، تمہیں جس چیز کا خیال رکھنا چاہیے وہ اللہ تعالیٰ کی اکیلے عبادت کرنا ہے۔ جو اس کے علاوہ کچھ کرے گا، وہ اپنی جان پر بڑا ظلم کرے گا۔ لقمان نے اپنی نصیحتوں کی وضاحت کی کہ اللہ سب کچھ جانتا ہے، ظاہری اور پوشیدہ دونوں؛ اور، میرے بیٹے، نماز قائم رکھو، کیونکہ یہ دین کا اساس ہے، اور لوگوں کو نیکیوں کی دعوت دینے کے لیے کوشش کرو، اور انہیں برائیوں سے بچنے کی نصیحت کرو۔ اس نے اس کو مشکلات اور آزمائشوں میں صبر کرنے کی بھی نصیحت کی، کیونکہ اس کا اللہ تعالیٰ کے ہاں بڑا انعام ہے۔ پھر لقمان نے اپنے بیٹے سے کہا: میرے بیٹے، لوگوں پر تکبر کرنے اور مغرور ہونے سے بچو، کیونکہ یہ انسان کی سب سے بدترین صفات میں سے ایک ہے، اور اللہ تعالیٰ تکبّر کرنے والوں کو پسند نہیں کرتا، لہذا تمہیں ہر ایک کے ساتھ عاجزی سے پیش آنا چاہیے، چاہے تمہاری حیثیت کتنی بھی بلند ہو۔ لقمان نے اپنے بیٹے کو اعتدال اور توازن کی ضرورت پر نصیحت کرتے ہوئے کہا، یہاں تک کہ چلنے میں بھی، اسے نہ تو زیادہ تیز چلنا چاہیے اور نہ ہی بہت آہستہ۔ اس نے اسے بات کرتے وقت اپنی آواز بھی کم کرنے کا حکم دیا، کیونکہ یہ دوسروں کے لیے احترام کا اظہار ہے۔ ہمیں سب کو لقمان کی نصیحتوں سے سیکھنا چاہیے اور انہیں اپنی زندگیوں میں نافذ کرنا چاہیے۔",
      nom5: "حضرت ادریس علیہ السلام کی کہانی",
-     p5:"حضرت ادریس علیہ السلام کا ذکر ہے کہ وہ پہلا شخص تھے جس نے قلم سے لکھا اور پہلا شخص تھے جس نے کپڑے پہنے۔ ہمارے نبی محمد صلی اللہ علیہ وسلم نے فرمایا کہ انہوں نے ادریس کو چوتھے آسمان پر دیکھا۔ اللہ تعالیٰ نے قرآن میں انہیں صابر اور صالحین میں سے قرار دیا ہے"
-        
+     p5:"حضرت ادریس علیہ السلام کا ذکر ہے کہ وہ پہلا شخص تھے جس نے قلم سے لکھا اور پہلا شخص تھے جس نے کپڑے پہنے۔ ہمارے نبی محمد صلی اللہ علیہ وسلم نے فرمایا کہ انہوں نے ادریس کو چوتھے آسمان پر دیکھا۔ اللہ تعالیٰ نے قرآن میں انہیں صابر اور صالحین میں سے قرار دیا ہے" ,
+        cb: "پس منظر منتخب کریں",
+        rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
         },
         
         id: {
@@ -143,9 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
                 Kita semua harus belajar dari nasihat Luqman kepada putranya dan menerapkannya dalam kehidupan kita.`,
                 nom5: "Kisah Nabi Idris (semoga keselamatan baginya)",
-                p5: "Dikatakan bahwa Nabi Idris (semoga keselamatan baginya) adalah orang pertama yang menulis dengan pena dan orang pertama yang mengenakan pakaian. Nabi Muhammad (semoga Allah memberinya berkah dan keselamatan) menyebutkan bahwa beliau melihat Idris di langit keempat. Allah menggambarkan beliau dalam Al-Qur'an sebagai salah seorang yang sabar dan saleh"
-                
-       
+                p5: "Dikatakan bahwa Nabi Idris (semoga keselamatan baginya) adalah orang pertama yang menulis dengan pena dan orang pertama yang mengenakan pakaian. Nabi Muhammad (semoga Allah memberinya berkah dan keselamatan) menyebutkan bahwa beliau melihat Idris di langit keempat. Allah menggambarkan beliau dalam Al-Qur'an sebagai salah seorang yang sabar dan saleh",
+                cb: "Pilih Latar Belakang",
+                rb: "Setel Ulang Latar Belakang Default",
             }
         
     
@@ -169,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('chz').textContent = translations[lang].chz;
          document.getElementById('about').textContent = translations[lang].about;
          document.getElementById('history').textContent = translations[lang].history;
-
+         document.getElementById('cb').textContent = translations[lang].cb;
+         document.getElementById('rb').textContent = translations[lang].rb;
 
      };
 
@@ -216,8 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-     // الدالة لاختيار صورة كخلفية
-     document.getElementById('change-background').addEventListener('click', function() {
+    // الدالة لاختيار صورة كخلفية
+    document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
@@ -243,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // دالة لإعادة الخلفية الافتراضية
-    document.getElementById('reset-background').addEventListener('click', function() {
+    document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
         document.body.style.backgroundImage = '';  // إزالة الخلفية
     });
