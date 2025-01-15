@@ -411,13 +411,6 @@ body.dark-mode td {
         padding: 15px;
     }
 
-    button {
-        font-size: 0.9rem;
-    }
-
-    form {
-        gap: 10px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -425,14 +418,7 @@ body.dark-mode td {
         padding: 10px;
     }
 
-    button {
-        font-size: 0.8rem;
-    }
 
-    /* تصميم أكثر اتساعاً للأزرار في الشاشات الصغيرة جداً */
-    button {
-        padding: 12px;
-    }
 }
 .menu-button {
     background-color: var(--button-background);
