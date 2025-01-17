@@ -316,6 +316,7 @@ table {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: auto;
+    font-size: 16px;
 }
 
 th, td {
@@ -412,6 +413,10 @@ body.dark-mode td {
 @media (max-width: 678px) {
     .container {
        width:90%;
+    }
+    table{
+        width: 0%;
+        font-size: 13px;
     }
     
 
