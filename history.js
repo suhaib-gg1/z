@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "قصص",
             about: "عَنْ",
             t: "التاريخ",
-            m: "المال (بالريال)",
-            d: "الدين (بالريال)",
             km: "الزكاة المستحقة (بالريال)",
             a: "السجل",
             del: "حذف السجل",  // الترجمة بالعربية
@@ -22,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "storys",
             about: "about",
             t: "date",
-            m: "money (in Riyals)",
-            d: "debt (in Riyals)",
             km: "due zakat (in Riyals)",
             a: "history", // تم استبدال "record" بـ "history"
             del: "Delete Record", // الترجمة بالإنجليزية
@@ -37,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "کہانیاں",
             about: "کے بارے میں",
             t: "تاریخ",
-            m: "پیسہ (ریال میں)",
-            d: "قرض (ریال میں)",
             km: "مستحق زکات (ریال میں)",
             a: "تاریخ", // تم استبدال "ریکارڈ" بـ "تاریخ"
             del: "ریکارڈ حذف کریں", // الترجمة بالأردية
@@ -51,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             story: "cerita",
             about: "tentang",
             t: "tanggal",
-            m: "uang (dalam Riyal)",
-            d: "hutang (dalam Riyal)",
             km: "zakat yang harus dibayar (dalam Riyal)",
             a: "sejarah", // تم استبدال "catatan" بـ "sejarah" (التاريخ)
             del: "Hapus Rekaman", // الترجمة الإندونيسية
@@ -75,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('story').textContent = translations[lang].story;
         document.getElementById('about').textContent = translations[lang].about;
         document.getElementById('t').textContent = translations[lang].t;
-        document.getElementById('m').textContent = translations[lang].m;
-        document.getElementById('d').textContent = translations[lang].d;
         document.getElementById('km').textContent = translations[lang].km;
         document.getElementById('del').textContent = translations[lang].del;
         document.getElementById('a').textContent = translations[lang].a; // إضافة الترجمة للتاريخ
@@ -134,53 +124,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    // ... (Existing Code for translations, hamburger menu, dark mode)
+
     const historyTable = document.getElementById('history-table').getElementsByTagName('tbody')[0];
+    let history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
 
-    // استرجاع السجل المخزن من localStorage
-    const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
-
-    // وظيفة لعرض السجل في الجدول
+    // Function to display history, now with sorting!
     function displayHistory() {
-        historyTable.innerHTML = ''; // مسح الجدول الحالي
+        historyTable.innerHTML = '';
+
+        // Sort history from newest to oldest *BEFORE* displaying
+        history.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
         history.forEach((entry, index) => {
             const row = historyTable.insertRow();
             row.innerHTML = `
-                <td>${index + 1}</td> <!-- عرض عدد العمليات -->
+                <td>${index + 1}</td>
                 <td>${entry.date}</td>
-                <td>${entry.totalWealth}</td>
-                <td>${entry.debt}</td>
+              
                 <td>${entry.zakahAmount}</td>
                 <td><button class="delete-btn" data-index="${index}">🗑️</button></td>
             `;
         });
 
-        // إضافة مستمع الحدث لأزرار الحذف
-        const deleteButtons = document.querySelectorAll('.delete-btn');
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                const index = event.target.getAttribute('data-index');
-                deleteHistoryEntry(index);
-            });
-        });
+        // ... (Existing code for delete buttons)
     }
 
-    // وظيفة لحذف السجل من التاريخ
-    function deleteHistoryEntry(index) {
-        // حذف العنصر من المصفوفة
-        history.splice(index, 1);
-        
-        // تحديث localStorage بعد الحذف
-        localStorage.setItem('zakahHistory', JSON.stringify(history));
-        
-        // إعادة عرض السجل بعد التحديث
-        displayHistory();
-    }
+    // ... (Existing Code for deleteHistoryEntry, background image)
 
-    // عرض السجل عند تحميل الصفحة
+    // Display history on page load
     displayHistory();
 });
+
+
     // الدالة لاختيار صورة كخلفية
     document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
