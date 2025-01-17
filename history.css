@@ -423,6 +423,18 @@ body.dark-mode td {
 
 
 }
+@media (max-width: 500px) {
+    .container {
+       width:90%;
+    }
+    table{
+        width: 300px;
+        font-size: 9px;
+    }
+    
+
+
+}
 .menu-button {
     background-color: var(--button-background);
     border: solid rgb(28, 28, 28);
