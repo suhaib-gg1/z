@@ -310,11 +310,12 @@ p{
 }
 /* تنسيق جدول السجلات */
 table {
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
 th, td {
@@ -406,17 +407,13 @@ body.dark-mode td {
     background-color: #ff0000; /* اللون عند التمرير على الزر */
 }
 /* استخدام media queries للتحكم في التخطيط على الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
 
-}
 
-@media (max-width: 480px) {
+@media (max-width: 678px) {
     .container {
-        padding: 10px;
+       width:90%;
     }
+    
 
 
 }
