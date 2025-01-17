@@ -317,6 +317,7 @@ table {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: auto;
     font-size: 16px;
+    padding: 0;
 }
 
 th, td {
@@ -415,7 +416,7 @@ body.dark-mode td {
        width:90%;
     }
     table{
-        width: 0%;
+        width: 300px;
         font-size: 13px;
     }
     
