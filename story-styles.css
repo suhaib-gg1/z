@@ -91,19 +91,23 @@ body {
     size: 20px;
 }
 .hamburger {
-        font-size: 30px;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        position: absolute;  /* لجعل الهامبرغر في أقصى اليمين */
-        right: 50px;          /* تحديد المسافة من الجهة اليمنى */
-        top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
-        transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
-    }
-.hamburger:hover{
-        color: var(--hum-color);
-    }
+    font-size: 30px;
+    color: var(--h-color);
+    cursor: pointer;
+    position: absolute;  /* لجعل الهامبرغر في أقصى اليمين */
+    right: 50px;          /* تحديد المسافة من الجهة اليمنى */
+    top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
+    transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    transition: font-size 0.3s ease, color 0.3s ease; /* إضافة تأثير تدريجي على حجم الخط */
 
+}
 
+.hamburger:hover {
+    color: var(--hum-color);
+    font-size: 35px;
+}
+
+/* قائمة الروابط */
 .nav-links {
     display: none; /* إخفاء القائمة افتراضيًا */
     flex-direction: column;
@@ -120,17 +124,22 @@ body {
     list-style: none;
 }
 
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     padding: 10px;
     display: block;
+    border-radius: 10px;
+    transition:font-size 0.7s ease, background-color 0.3s, color 0.3s; /* إضافة تأثيرات عند التمرير */
+    font: bold;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
     background-color: #00000085;
     color: #ffffff;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .nav-links.show {
@@ -220,20 +229,29 @@ select:focus {
 
 
 
-#toggle-dark-mode{
-    position:relative;
+#toggle-dark-mode {
+    position: relative;
     border: solid rgba(0, 0, 0, 0.712);
     border-radius: 7px;
     appearance: none; /* إزالة التصميم الافتراضي */
-    background-image:url(moon.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
-    background-size: cover; /* تغطية الخلفية بشكل كامل */
-    background-repeat: no-repeat; /* عدم تكرار الخلفية */
-    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
-    background-position: center; /* تحديد مكان الخلفية في المنتصف */
-    background-color: var(--button-background);
-    color: #000000;
+    background-image: url('moon.jpg'); /* الصورة في الوضع النهاري */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 100% center; /* تحديد مكان الخلفية في المنتصف */
+    background-color: var(--button-background, #fff);
+    color: #000;
     display: inline-block;
     font-size: 18px;
+    padding: 2px 15px;
+    cursor: pointer;
+    overflow: hidden; /* إخفاء أي شيء يخرج من الزر */
+    pointer-events: painted;
+    transition: font-size 0.1s , color 0.3s;
+
+}
+#toggle-dark-mode:hover {
+    font-size: 19px;
 }
 
 /* الحالة عند تفعيل الوضع الليلي */
@@ -288,10 +306,12 @@ body.dark-mode #toggle-dark-mode {
     width: 100%;
     justify-content: center;
     gap: 4px;
+transition: font-size 0.25s , color 0.3s;
 }
 
 .menu-button:hover {
     background-color: var(--button-hover);
+    font-size: 15px;
 }
 /* إخفاء مدخل اختيار الملف */
 #file-input {
