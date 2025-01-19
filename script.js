@@ -180,27 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     
 
-document.addEventListener('DOMContentLoaded', () => {
-    // استرجاع الوضع المخزن
-    if (localStorage.getItem('darkMode') === 'enabled') {
-        document.body.classList.add('dark-mode');
-        document.getElementById('toggle-dark-mode').textContent = '🌞';
-    }
-
-    // تفعيل أو تعطيل الوضع الليلي
-    document.getElementById('toggle-dark-mode').addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        // حفظ الوضع في localStorage
-        if (document.body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-            document.getElementById('toggle-dark-mode').textContent = '🌞';
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-            document.getElementById('toggle-dark-mode').textContent = '🌚';
-        }
-    });
-});
 
      // الدالة لاختيار صورة كخلفية
      document.getElementById('cb').addEventListener('click', function() {
@@ -243,3 +222,4 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.backgroundAttachment = 'fixed';
         }
     });
+    
