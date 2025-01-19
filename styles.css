@@ -6,14 +6,13 @@
     --button-hover: #218838; /* اللون عند التمرير على الزر */
     --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
     --result-text-color: #000;
-    --h-color:#000;
-    --input-background:#ffffff;
-    --lang-background:#ffffff;
+    --h-color: #000;
+    --input-background: #ffffff;
+    --lang-background: #ffffff;
     --shadow-box: 0 0 20px #dd0000;
     --hum-color: #e40000;
     --nom-border: 2px solid #e40000;
-    --ar-box: 0 0 5px rgba(214, 0, 0, 0.5);;
-
+    --ar-box: 0 0 5px rgba(214, 0, 0, 0.5); /* تصحيح الفاصلة المكررة */
 }
 
 body.dark-mode {
@@ -24,14 +23,13 @@ body.dark-mode {
     --button-hover: #666;
     --container-background: #444;
     --result-text-color: #fff;
-    --h-color:#ffffff;
-    --input-background:#c2c2c2;
-    --lang-background:#f0f0f0;
+    --h-color: #ffffff;
+    --input-background: #c2c2c2;
+    --lang-background: #f0f0f0;
     --shadow-box: 0 0 20px #007BFF;
     --hum-color:  #007BFF;
     --nom-border: 2px solid #007BFF;
-    --ar-box: 0 0 5px rgba(0, 204, 255, 0.562);;
-
+    --ar-box: 0 0 5px rgba(0, 204, 255, 0.562);
 }
 
 body {
@@ -47,7 +45,7 @@ body {
     transition: background-color 0.3s, color 0.3s; /* انتقال سلس للألوان */
 }
 
-/* الوضع العادي */
+/* navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -62,7 +60,6 @@ body {
     background-size: 200% 100%; /* تعيين حجم التدرج */
     background-position: right bottom; /* وضع التدرج من اليمين */
     transition: background-position 0.6s ease; /* تأثير الانتقال عند التبديل */
-
 }
 
 /* الوضع الليلي */
@@ -78,10 +75,11 @@ body.dark-mode .navbar {
     font-size: 24px; /* حجم النص */
     font-weight: bold; /* سمك النص */
 }
+
 #lang {
     appearance: none; /* إزالة التصميم الافتراضي */
     padding: 10px 40px 10px 15px; /* حشوة داخلية */
-    border:var(--nom-border); /* لون الحدود */
+    border: var(--nom-border); /* لون الحدود */
     border-radius: 5px; /* زوايا مدورة */
     background-color: var(--lang-background); /* لون الخلفية */
     color: #333; /* لون النص */
@@ -89,10 +87,12 @@ body.dark-mode .navbar {
     cursor: pointer; /* تغيير المؤشر عند التمرير */
     transition: border-color 0.3s ease; /* تأثير عند تغيير لون الحدود */
 }
+
 #lang:focus {
     outline: none; /* إزالة الحدود عند التركيز */
-    box-shadow:var(--ar-box) ;/* ظل عند التركيز */
+    box-shadow: var(--ar-box); /* ظل عند التركيز */
 }
+
 #lang:hover + .select-wrapper::after {
     transform: translateY(-50%) rotate(180deg); /* دوران السهم عند التمرير */
 }
@@ -109,12 +109,16 @@ body.dark-mode .navbar {
     right: 50px;          /* تحديد المسافة من الجهة اليمنى */
     top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
     transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    transition: font-size 0.3s ease, color 0.3s ease; /* إضافة تأثير تدريجي على حجم الخط */
+
 }
-.hamburger:hover{
+
+.hamburger:hover {
     color: var(--hum-color);
+    font-size: 35px;
 }
 
-
+/* قائمة الروابط */
 .nav-links {
     display: none; /* إخفاء القائمة افتراضيًا */
     flex-direction: column;
@@ -131,25 +135,29 @@ body.dark-mode .navbar {
     list-style: none;
 }
 
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     padding: 10px;
     display: block;
     border-radius: 10px;
-    
+    transition:font-size 0.7s ease, background-color 0.3s, color 0.3s; /* إضافة تأثيرات عند التمرير */
+    font: bold;
 }
-.nav-links a:hover{
+
+.nav-links a:hover {
     background-color: #00000085;
     color: #ffffff;
     border-radius: 5px;
-
+    font-size: 18px;
 }
 
 .nav-links.show {
     display: flex; /* عرض القائمة عند التفعيل */
 }
 
+/* الحاوية */
 .container {
     max-width: 600px;
     margin: 75px auto;
@@ -160,9 +168,6 @@ body.dark-mode .navbar {
     height: 360px;
     transition: background-color 0.3s; /* انتقال سلس */
 }
-
-
-
 
 h1 {
     text-align: center;
@@ -178,7 +183,6 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-color);
-
 }
 
 input {
@@ -208,7 +212,6 @@ input {
 #result {
     margin-top: 20px;
     color: var(--result-text-color);
-
     font-size: 18px;
 }
 
@@ -256,10 +259,12 @@ select:focus {
     right: 10px; /* المسافة من اليمين */
     transform: translateY(-50%); /* توسيط السهم */
     pointer-events: none; /* منع التفاعل مع السهم */
-    color:var(--hum-color); /* لون السهم */
+    color: var(--hum-color); /* لون السهم */
     font-size: 18px; /* حجم السهم */
     transition: transform 0.3s; /* تأثير عند التغيير */
 }
+
+/* الزر لتبديل الوضع الليلي */
 #toggle-dark-mode {
     position: relative;
     border: solid rgba(0, 0, 0, 0.712);
@@ -277,15 +282,22 @@ select:focus {
     padding: 2px 15px;
     cursor: pointer;
     overflow: hidden; /* إخفاء أي شيء يخرج من الزر */
+    pointer-events: painted;
+    transition: font-size 0.1s , color 0.3s;
+
 }
+#toggle-dark-mode:hover {
+    font-size: 19px;
+}
+
 
 /* الحالة عند تفعيل الوضع الليلي */
 body.dark-mode #toggle-dark-mode {
-    background-image:url(son.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
-    background-size: cover; /* تغطية الخلفية بشكل كامل */
-    background-repeat: no-repeat; /* عدم تكرار الخلفية */
-    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
-    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+    background-image: url('son.jpg'); /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* إضافة تأثير الأنيميشن لجميع العناصر التي تحمل الفئة fade-in */
@@ -318,7 +330,6 @@ body.dark-mode #toggle-dark-mode {
     animation: fadeInUp .7s forwards;
 }
 
-
 .menu-button {
     background-color: var(--button-background);
     border: solid rgb(28, 28, 28);
@@ -330,12 +341,15 @@ body.dark-mode #toggle-dark-mode {
     width: 100%;
     justify-content: center;
     gap: 4px;
+transition: font-size 0.25s , color 0.3s;
 }
 
 .menu-button:hover {
     background-color: var(--button-hover);
+    font-size: 15px;
 }
+
 /* إخفاء مدخل اختيار الملف */
 #file-input {
-    display: none ;
+    display: none;
 }
