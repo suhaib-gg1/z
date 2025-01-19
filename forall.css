@@ -47,6 +47,7 @@ body.dark-mode {
     transition: opacity 0.5s ease; /* تأثير الانتقال */
     pointer-events: none; /* لإخفاء التفاعل مع الإشعار */
     border-radius: 15px;
+    display: none;
 }
 
 /* إظهار الإشعار عند التبديل */
