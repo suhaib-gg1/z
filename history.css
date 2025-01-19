@@ -97,12 +97,16 @@ body {
     right: 50px;          /* تحديد المسافة من الجهة اليمنى */
     top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
     transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    transition: font-size 0.3s ease, color 0.3s ease; /* إضافة تأثير تدريجي على حجم الخط */
+
 }
-.hamburger:hover{
+
+.hamburger:hover {
     color: var(--hum-color);
+    font-size: 35px;
 }
 
-
+/* قائمة الروابط */
 .nav-links {
     display: none; /* إخفاء القائمة افتراضيًا */
     flex-direction: column;
@@ -119,19 +123,22 @@ body {
     list-style: none;
 }
 
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     padding: 10px;
     display: block;
     border-radius: 10px;
-    
+    transition:font-size 0.7s ease, background-color 0.3s, color 0.3s; /* إضافة تأثيرات عند التمرير */
+    font: bold;
 }
-.nav-links a:hover{
+
+.nav-links a:hover {
     background-color: #00000085;
     color: #ffffff;
     border-radius: 5px;
-
+    font-size: 18px;
 }
 
 .nav-links.show {
@@ -195,7 +202,7 @@ select:focus {
     font-size: 18px; /* حجم السهم */
     transition: transform 0.3s; /* تأثير عند التغيير */
 }
-#toggle-dark-mode{
+#toggle-dark-mode {
     position: relative;
     border: solid rgba(0, 0, 0, 0.712);
     border-radius: 7px;
@@ -212,7 +219,14 @@ select:focus {
     padding: 2px 15px;
     cursor: pointer;
     overflow: hidden; /* إخفاء أي شيء يخرج من الزر */
+    pointer-events: painted;
+    transition: font-size 0.1s , color 0.3s;
+
 }
+#toggle-dark-mode:hover {
+    font-size: 19px;
+}
+
 
 /* الحالة عند تفعيل الوضع الليلي */
 body.dark-mode #toggle-dark-mode {
@@ -446,10 +460,12 @@ body.dark-mode td {
     width: 100%;
     justify-content: center;
     gap: 4px;
+transition: font-size 0.25s , color 0.3s;
 }
 
 .menu-button:hover {
     background-color: var(--button-hover);
+    font-size: 15px;
 }
 /* إخفاء مدخل اختيار الملف */
 #file-input {
