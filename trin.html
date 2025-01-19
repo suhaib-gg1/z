@@ -1,70 +1,413 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زكاتي</title>
-    <link rel="stylesheet" href="trin.css">
-    <link rel="icon" href="z.icon">
-</head>
-<body>
-    <div>
-    
+:root {
+    --background-color: #f4f4f4; /* اللون الافتراضي للخلفية */
+    --text-color: #000000; /* اللون الافتراضي للنصوص */
+    --navbar-background: #cacaca; /* لون خلفية الشريط العلوي */
+    --button-background: #28a745; /* اللون الافتراضي لأزرار الحاسبة */
+    --button-hover: #218838; /* اللون عند التمرير على الزر */
+    --container-background: #cacaca; /* الخلفية الافتراضية للصندوق */
+    --result-text-color: #000;
+    --h-color:#000;
+    --input-background:#ffffff;
+    --lang-background:#ffffff;
+    --nomb-background:#ffffff;
+    --nom-border: solid #e40000;
+   --shadow-box: 0 0 20px #dd0000;
+   --hum-color: #e40000;
+   --ar-box: 0 0 5px rgba(255, 0, 0, 0.5);;
+   --nom2-border: 2px solid #e40000;
 
-    <div class="navbar">
-        <div class="b">
-            <div class="select-wrapper">
-                <select id="lang">
-                    <option value="ar">العربية</option>
-                    <option value="en">English</option>
-                    <option value="ur">اردو</option>
-                    <option value="id">Indonesia</option>
-                </select>
-            </div>
-        </div>
-        <div class="hamburger" id="hamburger">
-            &#9776; <!-- رمز همبرغر -->
-        </div>
-        <ul class="nav-links" id="nav-links" dir="rtl">
-            <li><a id="col" href="index.html">حاسبة الزكاة</a></li>
-            <li><a id="story" href="story-page.html">قصص</a></li>
-            <li><a id="history" href="history.html">السجل</a></li>
-            <li><a id="about" href="about.html">القائمون على هذ المشروع</a></li>
-            <div style="display: flex;;">
-                <button  class="menu-button" id="cb" style="padding:auto;">اختيار خلفية</button>
-                <button  class="menu-button" id="rb" style="padding: auto;">إعادة الخلفية الافتراضية</button>
-            </div>
-            
-            
-    <!-- عنصر اختيار ملف الصورة (سيتم إخفاؤه) -->
-    <input type="file" id="file-input" style="display:none" accept="image/*">
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --navbar-background: #333;
+    --button-background: #555;
+    --button-hover: #666;
+    --container-background: #444;
+    --result-text-color: #fff;
+    --h-color:#ffffff;
+    --input-background:#c2c2c2;
+    --lang-background:#f0f0f0;
+    --nomb-background:#000;
+    --nom-border: solid #007BFF;;
+    --shadow-box: 0 0 20px #007BFF;
+    --hum-color:  #007BFF;
+    --ar-box: 0 0 5px rgba(0, 204, 255, 0.562);;
+    --nom2-border: 2px solid #007BFF;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding-top: 60px; /* إضافة حشوة أعلى الصفحة تساوي ارتفاع الـ navbar */
+    background-image: url("Designer.jpeg"); /* وضع الصورة الخلفية */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+    transition: background-color 0.3s, color 0.3s; /* انتقال سلس للألوان */
+}
+
+.navbar {
+    position:fixed;  /* تثبيت الـ navbar في أعلى الصفحة */
+    top: 0;           /* وضعه في أعلى الصفحة */
+    left: 0;          /* محاذاته من الجهة اليسرى */
+    width: 100%;      /* العرض الكامل للـ navbar */
+    display: flex;
+    align-items: center; /* محاذاة العناصر داخل الـ navbar */
+    background-color: var(--navbar-background);
+    padding: 10px 20px; /* حشوة داخلية للـ navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* إضافة تأثير ظل للـ navbar */
+    z-index: 1000;    /* لضمان بقاء الـ navbar فوق باقي العناصر */
+}
+
+.logo {
+    color: #fff; /* لون النص */
+    font-size: 24px; /* حجم النص */
+    font-weight: bold; /* سمك النص */
+}
+#lang {
+    appearance: none; /* إزالة التصميم الافتراضي */
+    padding: 10px 40px 10px 15px; /* حشوة داخلية */
+    border:var(--nom2-border); /* لون الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    background-color: var(--lang-background); /* لون الخلفية */
+    color: #333; /* لون النص */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* تغيير المؤشر عند التمرير */
+    transition: border-color 0.3s ease; /* تأثير عند تغيير لون الحدود */
+}
+#lang:focus {
+    outline: none; /* إزالة الحدود عند التركيز */
+  
+    box-shadow:var(--ar-box) /* ظل عند التركيز */
+}
+#lang:hover + .select-wrapper::after {
+    transform: translateY(-50%) rotate(180deg); /* دوران السهم عند التمرير */
+}
+
+.b {
+    margin-right: 20px; /* مسافة بين قائمة اللغة وقائمة الهمبرغر */
+}
+
+.hamburger {
+    font-size: 30px;
+    color: var(--h-color);
+    cursor: pointer;
+    position: absolute;  /* لجعل الهامبرغر في أقصى اليمين */
+    right: 50px;          /* تحديد المسافة من الجهة اليمنى */
+    top: 50%;             /* تحديد الموقع عموديًا في منتصف الـ navbar */
+    transform: translateY(-50%); /* توسيط الهامبرغر عموديًا */
+    transition: font-size 0.3s ease, color 0.3s ease; /* إضافة تأثير تدريجي على حجم الخط */
+
+}
+
+.hamburger:hover {
+    color: var(--hum-color);
+    font-size: 35px;
+}
+
+/* قائمة الروابط */
+.nav-links {
+    display: none; /* إخفاء القائمة افتراضيًا */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* ارتفاع navbar */
+    right: 0;
+    background-color: var(--navbar-background);
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+    list-style: none;
+}
 
 
-            <button class="m" id="toggle-dark-mode" title="تبديل الوضع">🌚</button>
-            
-        </ul>
-        <div class="img"  style="right: 110px;">
-            <img src="snapedit_1730146554309.png" width="120"  alt="Logo" >
-        </div>
-    </div>
-   
-    <div class="container" dir="auto">
-        <h1 id="chz">تحدي حساب الزكاة</h1>
-          <div id="scoreDisplay"> 0</div>
-        <div class="Q">
-            
-            <p id="randomNumber"></p>
-            <input class="userAnswer"  type="number" id="userAnswer">
-            <button class="f" id="checkAnswer">تحقق الإجابة</button>
-        </div>
-        <button class="f" id="changeNumber">تغيير الرقم</button>
-        <div id="result"></div>
-    </div>
-</div>
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px;
+    display: block;
+    border-radius: 10px;
+    transition:font-size 0.7s ease, background-color 0.3s, color 0.3s; /* إضافة تأثيرات عند التمرير */
+    font: bold;
+}
 
-  </div>
+.nav-links a:hover {
+    background-color: #00000085;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 18px;
+}
 
-    <script src="trin.js"></script>
-</body>
-</html>
-3
+.nav-links.show {
+    display: flex; /* عرض القائمة عند التفعيل */
+}
+
+.container {
+    max-width: 600px;
+    margin: 70px auto;
+    padding: 20px;
+    background: var(--container-background, #f9f9f9); /* استخدام المتغير أو اللون الافتراضي */
+    border-radius: 8px;
+    box-shadow: var(--shadow-box);
+    height: 450px; /* زيادة الارتفاع لاحتواء الحقل الأكبر والأزرار أسفله */
+    transition: background-color 0.3s; /* انتقال سلس */
+    text-align: center; /* لضبط النص في المنتصف */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+
+
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+#result {
+    margin-top: 20px;
+    color: var(--result-text-color);
+
+    font-size: 18px;
+}
+.img {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    right: 70px;
+    width: 100px;
+    z-index: 1001;
+}
+select {
+    padding: 10px; /* إضافة حشوة */
+    border: 1px solid #ccc; /* لون الحدود */
+    border-radius: 5px; /* زوايا مدورة */
+    background-color: #f9f9f9; /* لون الخلفية */
+    font-size: 16px; /* حجم الخط */
+    appearance: none; /* إزالة التصميم الافتراضي */
+}
+
+/* إضافة سهم مخصص */
+select:focus {
+    outline: none; /* إزالة الحدود عند التركيز */
+    border-color: #66afe9; /* لون الحدود عند التركيز */
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.select-wrapper::after {
+    content: '▼'; /* رمز السهم */
+    position: absolute; /* لتحريكه */
+    top: 50%; /* في المنتصف */
+    right: 10px; /* المسافة من اليمين */
+    transform: translateY(-50%); /* توسيط السهم */
+    pointer-events: none; /* منع التفاعل مع السهم */
+    color: var(--hum-color); /* لون السهم */
+    font-size: 18px; /* حجم السهم */
+    transition: transform 0.3s; /* تأثير عند التغيير */
+}
+#toggle-dark-mode {
+    position: relative;
+    border: solid rgba(0, 0, 0, 0.712);
+    border-radius: 7px;
+    appearance: none; /* إزالة التصميم الافتراضي */
+    background-image: url('moon.jpg'); /* الصورة في الوضع النهاري */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 100% center; /* تحديد مكان الخلفية في المنتصف */
+    background-color: var(--button-background, #fff);
+    color: #000;
+    display: inline-block;
+    font-size: 18px;
+    padding: 2px 15px;
+    cursor: pointer;
+    overflow: hidden; /* إخفاء أي شيء يخرج من الزر */
+    pointer-events: painted;
+    transition: font-size 0.1s , color 0.3s;
+
+}
+#toggle-dark-mode:hover {
+    font-size: 19px;
+}
+
+/* الحالة عند تفعيل الوضع الليلي */
+body.dark-mode #toggle-dark-mode {
+    background-image:url(son.jpg);  /* التدرج اللوني الجديد عند تفعيل الوضع الليلي */
+    background-size: cover; /* تغطية الخلفية بشكل كامل */
+    background-repeat: no-repeat; /* عدم تكرار الخلفية */
+    background-attachment: fixed; /* جعل الخلفية ثابتة أثناء التمرير */
+    background-position: center; /* تحديد مكان الخلفية في المنتصف */
+}
+
+/* إضافة التصميم الجديد */
+
+
+/* تخصيص حقل الإجابة ليكون أكبر */
+input[type="number"] {
+    padding: 15px;
+    width: 80%; /* عرض الحقل مخصص */
+    margin: 20px 0; /* المسافة حول حقل الإدخال */
+    border-radius: 8px;
+    border: 2px solid #000000;
+    font-size: 20px; /* زيادة حجم الخط */
+    text-align: center; /* جعل النص في حقل الإجابة في المنتصف */
+    outline: none;
+    position:static;
+    background-color: var(--input-background);
+
+}
+
+input[type="number"]:focus {
+    border-color: #28a745; /* تغيير اللون عند التركيز على الحقل */
+}
+
+/* تنسيق الأزرار */
+.f {
+    padding:10;
+    background-color: var(--button-background);
+    color: var(--text-color);
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 45%; /* عرض الأزرار داخل الحاوية */
+    margin: 10px 0; /* المسافة بين الأزرار */
+}
+
+.f:hover {
+    background-color: var(--button-hover);
+}
+
+/* إذا كانت الأزرار في ترتيب أفقي */
+.f-container {
+    display: flex;
+    flex-direction: row;  /* ترتيب الأزرار بشكل أفقي */
+    justify-content: center;
+    gap: 10px; /* المسافة بين الأزرار */
+}
+
+
+#result {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#randomNumber {
+    font-size: 30px;
+    font-weight: bold;
+    margin: -75 0 50 0;
+    color: var(--text-color);
+    border: var(--nom-border);
+    border-radius: 10px;
+    background-color:var(--nomb-background);
+}
+.hidden {
+    display: none;
+}
+/* تأثير تكبير مع تلاشي */
+@keyframes correct-answer {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* عند الإجابة الصحيحة */
+.correct-answer {
+    animation: correct-answer 1s ease-out;
+    color: green;  /* تغيير اللون إلى الأخضر عند الإجابة الصحيحة */
+    font-size: 30px;  /* تغيير الحجم قليلاً */
+}
+#scoreDisplay {
+    font-size: 25px;
+    font-weight: bold;
+    position:relative;
+    top: 0;
+    left: 7%;
+    transform: translateX(-50%) ;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000; /* تأكد من ظهورها فوق العناصر الأخرى */
+}
+
+/* إضافة تأثير لتغيير لون النقاط */
+#scoreDisplay.green {
+    color: rgb(94, 255, 0);
+}
+/* إضافة تأثير الأنيميشن لجميع العناصر التي تحمل الفئة fade-in */
+.fade-in {
+    opacity: 0; /* بدء العنصر بشفافية 0 (غير مرئي) */
+    transform: translateY(20px); /* بدء العنصر بعيدًا عن موقعه */
+    animation: fadeInUp 1.5s forwards; /* تشغيل الأنيميشن */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* البدء من الأسفل */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* النهاية في الموقع الطبيعي */
+    }
+}
+
+/* تأثير الظهور التدريجي للـ navbar */
+.navbar {
+    opacity: 0;
+    animation: fadeInUp .5s forwards;
+}
+
+/* تأثير الظهور التدريجي للمحتوى */
+.container {
+    opacity: 0;
+    animation: fadeInUp .7s forwards;
+}
+
+.menu-button {
+    background-color: var(--button-background);
+    border: solid rgb(28, 28, 28);
+    border-radius: 5px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 0px;
+    width: 100%;
+    justify-content: center;
+    gap: 4px;
+transition: font-size 0.25s , color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: var(--button-hover);
+    font-size: 15px;
+}
+/* إخفاء مدخل اختيار الملف */
+#file-input {
+    display: none ;
+}
