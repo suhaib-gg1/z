@@ -300,10 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <td>${entry.date}</td>
 
-                <td>${entry.totalWealth}</td>
-
-                <td>${entry.debt}</td>
-
                 <td>${entry.zakahAmount}</td>
 
                 <td><button class="delete-btn" data-index="${index}">🗑️</button></td>
