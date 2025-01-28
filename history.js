@@ -16,17 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             t: "التاريخ",
 
-            m: "المال (بالريال)",
-
-            d: "الدين (بالريال)",
-
             km: "الزكاة المستحقة (بالريال)",
 
             a: "السجل",
 
-            del: "حذف السجل",  // الترجمة بالعربية
+            d: "حذف السجل",  // الترجمة بالعربية
 
-            nom: "ترتيب العمليات", // الترجمة بالعربية
+            m: "ترتيب العمليات", // الترجمة بالعربية
 
             cb: "اختيار خلفية",
 
@@ -46,17 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             t: "date",
 
-            m: "money (in Riyals)",
-
-            d: "debt (in Riyals)",
+     
 
             km: "due zakat (in Riyals)",
 
             a: "history", // تم استبدال "record" بـ "history"
 
-            del: "Delete Record", // الترجمة بالإنجليزية
+            d: "Delete Record", // الترجمة بالإنجليزية
 
-            nom: "Sort Operations", // الترجمة بالإنجليزية
+            m: "Sort Operations", // الترجمة بالإنجليزية
 
             cb: "Choose Background",
 
@@ -76,17 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             t: "تاریخ",
 
-            m: "پیسہ (ریال میں)",
-
-            d: "قرض (ریال میں)",
+        
 
             km: "مستحق زکات (ریال میں)",
 
             a: "تاریخ", // تم استبدال "ریکارڈ" بـ "تاریخ"
 
-            del: "ریکارڈ حذف کریں", // الترجمة بالأردية
+            d: "ریکارڈ حذف کریں", // الترجمة بالأردية
 
-            nom: "عملیات کو ترتیب دیں", // الترجمة بالأردية
+            m: "عملیات کو ترتیب دیں", // الترجمة بالأردية
 
             cb: "پس منظر منتخب کریں",
 
@@ -104,17 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             t: "tanggal",
 
-            m: "uang (dalam Riyal)",
-
-            d: "hutang (dalam Riyal)",
-
+       
             km: "zakat yang harus dibayar (dalam Riyal)",
 
             a: "sejarah", // تم استبدال "catatan" بـ "sejarah" (التاريخ)
 
-            del: "Hapus Rekaman", // الترجمة الإندونيسية
+            d: "Hapus Rekaman", // الترجمة الإندونيسية
 
-            nom: "Urutkan Operasi", // الترجمة الإندونيسية
+            m: "Urutkan Operasi", // الترجمة الإندونيسية
 
             cb: "Pilih Latar Belakang",
 
@@ -158,11 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('km').textContent = translations[lang].km;
 
-        document.getElementById('del').textContent = translations[lang].del;
 
         document.getElementById('a').textContent = translations[lang].a; // إضافة الترجمة للتاريخ
 
-        document.getElementById('nom').textContent = translations[lang].nom; // إضافة الترجمة للتاريخ
 
         document.getElementById('cb').textContent = translations[lang].cb;
 
@@ -228,47 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-document.addEventListener('DOMContentLoaded', () => {
 
-    // استرجاع الوضع المخزن
-
-    if (localStorage.getItem('darkMode') === 'enabled') {
-
-        document.body.classList.add('dark-mode');
-
-        document.getElementById('toggle-dark-mode').textContent = '🌞';
-
-    }
-
-
-
-    // تفعيل أو تعطيل الوضع الليلي
-
-    document.getElementById('toggle-dark-mode').addEventListener('click', () => {
-
-        document.body.classList.toggle('dark-mode');
-
-        
-
-        // حفظ الوضع في localStorage
-
-        if (document.body.classList.contains('dark-mode')) {
-
-            localStorage.setItem('darkMode', 'enabled');
-
-            document.getElementById('toggle-dark-mode').textContent = '🌞';
-
-        } else {
-
-            localStorage.setItem('darkMode', 'disabled');
-
-            document.getElementById('toggle-dark-mode').textContent = '🌚';
-
-        }
-
-    });
-
-});
 
 document.addEventListener('DOMContentLoaded', () => {
 
