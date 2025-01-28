@@ -1,77 +1,143 @@
 <!DOCTYPE html>
+
 <html lang="ar">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>زكاتي</title>
+
     <link rel="stylesheet" href="history.css">
-    <link rel="stylesheet" href="forall.css">
 
     <link rel="icon" href="z.icon">
+
 </head>
+
 <body>
-    <div id="notification" class="notification">تم التبديل إلى الوضع الليلي!</div>
 
     <div class="navbar">
+
         <div class="b">
+
             <div class="select-wrapper">
+
                 <select id="lang">
+
                     <option value="ar">العربية</option>
+
                     <option value="en">English</option>
+
                     <option value="ur">اردو</option>
+
                     <option value="id">Indonesia</option>
+
                 </select>
+
             </div>
+
         </div>
+
         <div class="hamburger" id="hamburger">
+
             &#9776; <!-- رمز همبرغر -->
+
         </div>
+
         <ul class="nav-links" id="nav-links" dir="rtl">
+
             <li><a id="col" href="index.html">حاسبة الزكاة</a></li>
+
             <li><a id="story" href="story-page.html">قصص</a></li>
+
             <li><a id="chz" href="trin.html">تحدي حساب الزكاة</a></li>
+
             <li><a id="about" href="about.html">عَنْ</a></li>
 
+
+
             <div style="display: flex;;">
+
                 <button  class="menu-button" id="cb" style="padding:auto;">اختيار خلفية</button>
+
                 <button  class="menu-button" id="rb" style="padding: auto;">إعادة الخلفية الافتراضية</button>
+
             </div>
+
             
+
             
+
     <!-- عنصر اختيار ملف الصورة (سيتم إخفاؤه) -->
+
     <input type="file" id="file-input" style="display:none" accept="image/*">
 
 
+
+
+
             <button class="m" id="toggle-dark-mode" title="تبديل الوضع">🌚</button>
+
             
+
         </ul>
+
         <div class="img"  style="right: 110px;">
+
             <img src="snapedit_1730146554309.png" width="120"  alt="Logo" >
+
         </div>
+
     </div>
+
     <div class="container" dir="auto">
+
     <header>
+
         <h1 id="a">سجل العمليات الحسابية</h1>
+
     </header>
+
     <main>
+
     <!-- جدول السجلات -->
+
 <table id="history-table" border="1" dir="rtl">
+
     <thead>
+
         <tr>
+
             <th id="nom">ترتيب العمليات</th>
+
             <th id="t">التاريخ</th>
-           
+
+      
+
             <th id="km">الزكاة المستحقة (ريال)</th>
+
             <th id="del">حذف السجل</th>
+
         </tr>
+
     </thead>
+
     <tbody id="history-body">
+
         <!-- سيتم ملء هذا القسم بالسجلات من خلال JavaScript -->
+
     </tbody>
+
 </table>
+
         
+
     </main></div>
-    <script src="forall.js"></script>
+
     <script src="history.js"></script>
+
 </body>
+
 </html>
