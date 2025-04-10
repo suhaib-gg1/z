@@ -353,3 +353,11 @@ transition: font-size 0.25s , color 0.3s;
 #file-input {
     display: none;
 }
+@media(max-width: 50@px){
+.container {
+width:90%;
+margin: 60p auto;}
+table{
+width: 300px3
+font-size: 11px;}
+}
