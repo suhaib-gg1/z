@@ -165,7 +165,7 @@ body.dark-mode .navbar {
     background: var(--container-background);
     border-radius: 8px;
     box-shadow: var(--shadow-box);
-    height: 360px;
+    height: auto;
     transition: background-color 0.3s; /* انتقال سلس */
 }
 
