@@ -1,23 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    
+
     // التعامل مع قائمة الهامبورغر
     hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show'); // إضافة أو إزالة الفئة 'show'
+        navLinks.classList.toggle('show');
     });
 
     // إخفاء القائمة إذا تم النقر خارجها
     document.addEventListener('click', (event) => {
-        // التحقق إذا كان النقر خارج زر الهامبورغر أو القائمة
         if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
-            navLinks.classList.remove('show'); // إخفاء القائمة
+            navLinks.classList.remove('show');
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    // نصوص الترجمة لكل لغة
     const translations = {
         ar: {
             history: "السجل",
@@ -34,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ريال',
             cb: "اختيار خلفية",
             rb: "إعادة الخلفية الافتراضية",
+            g: 'سعر جرام الذهب (بالريال):',
         },
         en: {
             history: "history",
@@ -50,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'SR',
             cb: "Choose Background",
             rb: "Reset Default Background",
+            g: 'Gold Price per Gram (in Riyals):',
         },
         ur: {
             history: "تاریخ",
@@ -66,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'ریال',
             cb: "پس منظر منتخب کریں",
             rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
+            g: 'سونے کی قیمت فی گرام (ریال میں):',
         },
         id: {
             history: "sejarah",
@@ -82,15 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
             a: 'SR',
             cb: "Pilih Latar Belakang",
             rb: "Setel Ulang Latar Belakang Default",
+            g: 'Harga Emas per Gram (dalam Riyal):',
         }
     };
-    
 
     const langSelect = document.getElementById('lang');
+    const savedLang = localStorage.getItem('language') || 'ar';
+    langSelect.value = savedLang;
 
-    // استرجاع اللغة المخزنة من localStorage
-    const savedLang = localStorage.getItem('language') || 'ar'; // إذا لم تكن هناك لغة مخزنة، استخدم الإنجليزية كافتراضية
-    langSelect.value = savedLang; // تعيين اللغة المخزنة للقائمة المنسدلة
     const updateText = (lang) => {
         document.getElementById('chz').textContent = translations[lang].chz;
         document.getElementById('story').textContent = translations[lang].story;
@@ -102,118 +100,93 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('history').textContent = translations[lang].history;
         document.getElementById('cb').textContent = translations[lang].cb;
         document.getElementById('rb').textContent = translations[lang].rb;
+        document.getElementById('g').textContent = translations[lang].g;
     };
 
-    // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
     langSelect.addEventListener('change', (event) => {
         const selectedLang = event.target.value;
         updateText(selectedLang);
-        localStorage.setItem('language', selectedLang); // تخزين اللغة في localStorage
+        localStorage.setItem('language', selectedLang);
     });
 
-    // تعيين النصوص عند تحميل الصفحة بناءً على اللغة المخزنة
     updateText(savedLang);
+
+    const resultElement = document.getElementById('result');
 
     document.getElementById('zakah-form').addEventListener('submit', function(event) {
         event.preventDefault();
-    
-        // الحصول على القيم من النموذج
+
         const totalWealth = parseFloat(document.getElementById('total-wealth').value);
         const debt = parseFloat(document.getElementById('debt').value);
-    
-        // حساب الزكاة
-        let zakahAmount = (totalWealth - debt) * 0.025; // نسبة الزكاة 2.5%
-    
-        // التأكد من أن قيمة الزكاة لا تكون سلبية
-        if (zakahAmount < 0) {
-            zakahAmount = 0;
+        const netWealth = totalWealth - debt;
+
+        // الحصول على سعر جرام الذهب المدخل من قبل المستخدم
+        const goldPrice = parseFloat(document.getElementById('gold-price').value);
+
+        const lang = langSelect.value;
+        const t = translations[lang];
+
+        // حساب النصاب بناءً على سعر الذهب المدخل
+        const nisab = 85 * goldPrice;
+
+        if (netWealth < nisab) {
+            resultElement.textContent = t.noZakahMessage;
+            resultElement.style.color = 'red';
+            return;
         }
-    
-        // عرض النتيجة للمستخدم
-        const selectedLang = langSelect.value;
-        const resultText = translations[selectedLang].resultText;
-        const noZakahMessage = translations[selectedLang].noZakahMessage;
-    
-        const resultElement = document.getElementById('result');
-    
-        // إظهار رسالة مختلفة إذا كانت الزكاة 0
-        if (zakahAmount === 0) {
-            resultElement.textContent = noZakahMessage;
-            resultElement.style.color = 'red';  // لون أحمر عند عدم وجود زكاة
-        } else {
-            resultElement.textContent = `${resultText} ${zakahAmount.toFixed(2)} ${translations[selectedLang].a}`;
-            resultElement.style.color = '#00aa09';  // لون أخضر عندما تكون الزكاة أكبر من 0
-        }
-    
-        // إذا كانت الزكاة 0 أو أقل، لا تتم إضافة السجل
-        if (zakahAmount <= 0) {
-            console.log("الزكاة تساوي 0 أو أقل. لن تتم إضافة السجل.");
-            return; // الخروج من الدالة بدون إضافة السجل
-        }
-    
-        // الحصول على السجل المخزن من localStorage
+
+        let zakahAmount = netWealth * 0.025;
+        resultElement.textContent = `${t.resultText} ${zakahAmount.toFixed(2)} ${t.a}`;
+        resultElement.style.color = '#00aa09';
+
         const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
-    
-        // التحقق من آخر سجل فقط (إن وجد)
         const lastEntry = history[history.length - 1];
-    
-        // التحقق إذا كانت القيم الحالية هي نفسها القيم في آخر سجل
+
         if (lastEntry && lastEntry.totalWealth === totalWealth && lastEntry.debt === debt && lastEntry.zakahAmount === zakahAmount.toFixed(2)) {
-            console.log("القيم هي نفسها القيم الأخيرة. لن تتم إضافة السجل.");
-        } else {
-            // إذا كانت القيم مختلفة، إضافة السجل الجديد
-            const date = new Date().toLocaleString();
-            const zakahRecord = {
-                date: date,
-                totalWealth: totalWealth,
-                debt: debt,
-                zakahAmount: zakahAmount.toFixed(2)
-            };
-    
-            // إضافة السجل إلى السجل الحالي في localStorage
-            history.push(zakahRecord);
-            localStorage.setItem('zakahHistory', JSON.stringify(history));
-            console.log("تم إضافة السجل الجديد.");
+            return;
+            
         }
+
+        const zakahRecord = {
+            date: new Date().toLocaleString(),
+            totalWealth,
+            debt,
+            zakahAmount: zakahAmount.toFixed(2)
+        };
+
+        history.push(zakahRecord);
+        localStorage.setItem('zakahHistory', JSON.stringify(history));
     });
-    
-    })
-    
 
-
-     // الدالة لاختيار صورة كخلفية
-     document.getElementById('cb').addEventListener('click', function() {
+    document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
         input.accept = 'image/*';
-        
+
         input.addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                
+
                 reader.onload = function() {
-                    // حفظ الصورة في localStorage
                     localStorage.setItem('background-image', reader.result);
                     document.body.style.backgroundImage = `url(${reader.result})`;
-                    document.body.style.backgroundSize = 'cover';  // لجعل الصورة تغطي الشاشة بالكامل
-                    document.body.style.backgroundAttachment = 'fixed';  // لجعل الخلفية ثابتة أثناء التمرير
+                    document.body.style.backgroundSize = 'cover';
+                    document.body.style.backgroundAttachment = 'fixed';
                 };
-                
-                reader.readAsDataURL(file);  // تحويل الصورة إلى قاعدة بيانات URL لتمكين استخدامها كخلفية
+
+                reader.readAsDataURL(file);
             }
         });
-        
-        input.click();  // فتح نافذة اختيار الملفات
+
+        input.click();
     });
 
-    // دالة لإعادة الخلفية الافتراضية
     document.getElementById('rb').addEventListener('click', function() {
         localStorage.removeItem('background-image');
-        document.body.style.backgroundImage = '';  // إزالة الخلفية
+        document.body.style.backgroundImage = '';
     });
 
-    // عند تحميل الصفحة، يتم تطبيق الخلفية المخزنة إذا كانت موجودة
     window.addEventListener('load', function() {
         const savedBackground = localStorage.getItem('background-image');
         if (savedBackground) {
@@ -222,4 +195,4 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.backgroundAttachment = 'fixed';
         }
     });
-    
+});
