@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             totalWealthLabel: 'وہ پیسہ جس پر ایک سال گزر چکا ہے (ریال میں):',
             debtLabel: 'قرض (ریال میں):',
             calculateButton: 'زکات کا حساب کریں',
-            warning: 'خبردار: یہ کیلکولیٹر صرف تعلیمی مقاصد کے لئے بنایا گیا ہے، اس میں کچھ غلطیاں ہو سکتی ہیں۔',
+            warning: 'خبردار: یہ کیلکولیشر صرف تعلیمی مقاصد کے لئے بنایا گیا ہے، اس میں کچھ غلطیاں ہو سکتی ہیں۔',
             resultText: 'زکات کی مقدار ہے:',
             noZakahMessage: 'دی گئی قیمتوں کی بنیاد پر کوئی زکات مستحق نہیں ہے۔',
             a: 'ریال',
@@ -88,6 +88,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSelect = document.getElementById('lang');
     const savedLang = localStorage.getItem('language') || 'ar';
     langSelect.value = savedLang;
+
+    // حفظ واسترجاع سعر الذهب
+    const goldPriceInput = document.getElementById('gold-price');
+    const savedGoldPrice = localStorage.getItem('goldPrice');
+    if (savedGoldPrice) {
+        goldPriceInput.value = savedGoldPrice;
+    }
+
+    goldPriceInput.addEventListener('input', function() {
+        localStorage.setItem('goldPrice', this.value);
+    });
 
     const updateText = (lang) => {
         document.getElementById('chz').textContent = translations[lang].chz;
