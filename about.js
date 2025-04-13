@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "صهيب بوزيدان",
             name1: "1- صهيب بوزيدان",
             name2: "2-عبدالرحمن خطيري",
+            name3: "3-راكان الشهري",
             p3: "وديع ابويوسف",
             cb: "اختيار خلفية",
             rb: "إعادة الخلفية الافتراضية",
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
+            name3: "3- Rakan Al-Shahri",
             p3: "Wadi' Abu Yusuf",
             cb: "Choose Background",
             rb: "Reset Default Background",
@@ -87,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "صہیب بوزیدان",
             name1: "1- صہیب بوزیدان",
             name2: "2- عبدالرحمن خطیری",
+            name3: "3- راکان الشہری",
             p3: "وديع ابو يوسف",
             cb: "پس منظر منتخب کریں",
             rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
@@ -104,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: "Suhayb Bouzidan",
             name1: "1- Suhayb Bouzidan",
             name2: "2- Abdulrahman Khatiri",
+            name3: "3- Rakan Al-Shahri",
             p3: "Wadi' Abu Yusuf",
             cb: "Pilih Latar Belakang",
             rb: "Setel Ulang Latar Belakang Default",
@@ -126,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('t').textContent = translations[lang].t;
          document.getElementById('name1').textContent = translations[lang].name1;
          document.getElementById('name2').textContent = translations[lang].name2;
+         document.getElementById('name3').textContent = translations[lang].name3;
          document.getElementById('p3').textContent = translations[lang].p3;
          document.getElementById('history').textContent = translations[lang].history;
          document.getElementById('cb').textContent = translations[lang].cb;
