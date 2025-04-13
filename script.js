@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const updateText = (lang) => {
+        // تحديث النصوص الأساسية
         document.getElementById('chz').textContent = translations[lang].chz;
         document.getElementById('story').textContent = translations[lang].story;
         document.getElementById('z').textContent = translations[lang].z;
@@ -112,6 +113,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cb').textContent = translations[lang].cb;
         document.getElementById('rb').textContent = translations[lang].rb;
         document.getElementById('g').textContent = translations[lang].g;
+
+        // تحديث النتيجة إذا كانت معروضة
+        const resultElement = document.getElementById('result');
+        if (resultElement.textContent) {
+            const totalWealth = parseFloat(document.getElementById('total-wealth').value) || 0;
+            const debt = parseFloat(document.getElementById('debt').value) || 0;
+            const goldPrice = parseFloat(document.getElementById('gold-price').value) || 0;
+            
+            const netWealth = totalWealth - debt;
+            const nisab = 85 * goldPrice;
+            
+            if (netWealth < nisab) {
+                resultElement.textContent = translations[lang].noZakahMessage;
+                resultElement.style.color = 'red';
+            } else {
+                const zakahAmount = netWealth * 0.025;
+                resultElement.textContent = `${translations[lang].resultText} ${zakahAmount.toFixed(2)} ${translations[lang].a}`;
+                resultElement.style.color = '#00aa09';
+            }
+        }
     };
 
     langSelect.addEventListener('change', (event) => {
@@ -127,18 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('zakah-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const totalWealth = parseFloat(document.getElementById('total-wealth').value);
-        const debt = parseFloat(document.getElementById('debt').value);
+        const totalWealth = parseFloat(document.getElementById('total-wealth').value) || 0;
+        const debt = parseFloat(document.getElementById('debt').value) || 0;
+        const goldPrice = parseFloat(document.getElementById('gold-price').value) || 0;
+        
         const netWealth = totalWealth - debt;
-
-        // الحصول على سعر جرام الذهب المدخل من قبل المستخدم
-        const goldPrice = parseFloat(document.getElementById('gold-price').value);
+        const nisab = 85 * goldPrice;
 
         const lang = langSelect.value;
         const t = translations[lang];
-
-        // حساب النصاب بناءً على سعر الذهب المدخل
-        const nisab = 85 * goldPrice;
 
         if (netWealth < nisab) {
             resultElement.textContent = t.noZakahMessage;
@@ -146,29 +164,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let zakahAmount = netWealth * 0.025;
+        const zakahAmount = netWealth * 0.025;
         resultElement.textContent = `${t.resultText} ${zakahAmount.toFixed(2)} ${t.a}`;
         resultElement.style.color = '#00aa09';
 
         const history = JSON.parse(localStorage.getItem('zakahHistory')) || [];
         const lastEntry = history[history.length - 1];
 
-        if (lastEntry && lastEntry.totalWealth === totalWealth && lastEntry.debt === debt && lastEntry.zakahAmount === zakahAmount.toFixed(2)) {
-            return;
-            
+        if (!lastEntry || lastEntry.totalWealth !== totalWealth || lastEntry.debt !== debt || lastEntry.zakahAmount !== zakahAmount.toFixed(2)) {
+            const zakahRecord = {
+                date: new Date().toLocaleString(),
+                totalWealth,
+                debt,
+                zakahAmount: zakahAmount.toFixed(2)
+            };
+            history.push(zakahRecord);
+            localStorage.setItem('zakahHistory', JSON.stringify(history));
         }
-
-        const zakahRecord = {
-            date: new Date().toLocaleString(),
-            totalWealth,
-            debt,
-            zakahAmount: zakahAmount.toFixed(2)
-        };
-
-        history.push(zakahRecord);
-        localStorage.setItem('zakahHistory', JSON.stringify(history));
     });
 
+    // باقي الكود الخاص بخلفية الصورة...
     document.getElementById('cb').addEventListener('click', function() {
         const input = document.createElement('input');
         input.type = 'file';
