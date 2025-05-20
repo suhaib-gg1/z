@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "وديع ابويوسف",
             cb: "اختيار خلفية",
             rb: "إعادة الخلفية الافتراضية",
+            p2: "صهيب بوزيدان",
         },
         en: {
             history:"history",
@@ -76,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "Wadi' Abu Yusuf",
             cb: "Choose Background",
             rb: "Reset Default Background",
+            p2: "Suhayb Bouzidan",
         },
         ur: {
             history:"تاریخ",
@@ -93,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "وديع ابو يوسف",
             cb: "پس منظر منتخب کریں",
             rb: "ڈیفالٹ پس منظر ری سیٹ کریں",
+            p2: "صہیب بوزیدان",
         },
         id: {
             history:"sejarah",
-
             story: "Cerita",
             col: "Kalkulator Zakat",
             chz: 'Tantangan Perhitungan Zakat',
@@ -111,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             p3: "Wadi' Abu Yusuf",
             cb: "Pilih Latar Belakang",
             rb: "Setel Ulang Latar Belakang Default",
+            p2: "Suhayb Bouzidan",
         }
     };
     
