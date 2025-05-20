@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
          document.getElementById('history').textContent = translations[lang].history;
          document.getElementById('cb').textContent = translations[lang].cb;
          document.getElementById('rb').textContent = translations[lang].rb;
-
+         document.getElementById('p2').textContent = translations[lang].p2;
     };
 
     // تحديث النصوص عندما يقوم المستخدم بتغيير اللغة
